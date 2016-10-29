@@ -28,6 +28,40 @@ body {
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['ID', 'X', 'Y', 'Temperature'],
+          ['1',   1,  1,      50],
+          ['2',   2,  -2,      250],
+          ['3',   3,  1,      100],
+          ['4',   4,  2,      50],
+          ['5',   5,  -3,      200],
+          ['6',   6,  1,      100],
+          ['7',   7,  2,      100]
+        ]);
+
+        var options = {
+            title: 'Current Week, Green -> Yellow, Good Mood -> Bad Mood',
+            hAxis: {title: 'Timeline ->'},
+            vAxis: {title: 'Priority ->'}, 
+            colorAxis: {colors: ['green', 'yellow']},
+            bubble:{ 
+                textStyle:{
+                    fontSize:12
+                }
+            }
+        };
+
+        var chart = new google.visualization.BubbleChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
 
   </head>
 
@@ -65,12 +99,19 @@ body {
       </div>
       <!-- /.container -->
     </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-    <h1> Will be replaced. </h1>
-
+    <div class = "container">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">Current Week</a></li>
+            <li role="presentation"><a href="#">Last Week</a></li>
+            <li role="presentation"><a href="#">History</a></li>
+        </ul>
     </div>
+    <!-- Page Content -->
+    <div class="container"></div>
+    <div id="chart_div" style="width: 60%; height: 70%;"></div>
+  </body>
+</html> 
+ 
     <!-- buttons -->
     <!--div class = "container">
       <a href = "#" class = "btn btn-success" role = "button">"Add Task"</a>
