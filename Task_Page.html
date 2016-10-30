@@ -114,7 +114,7 @@ body {
           <div class="panel-heading">
             <!--h3 class = "panel-title">+ Add Task</h3-->
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#EditModal">Edit</button>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>
 
             <!-- Modal -->
             <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
@@ -150,7 +150,7 @@ body {
           <div class="panel-heading">
             <!--h3 class = "panel-title">+ Add Task</h3-->
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#RateModal">Rate</button>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#rateModal">Rate</button>
 
             <!-- Modal -->
             <div class="modal fade" id="RateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
@@ -183,6 +183,127 @@ body {
         </div-->
         <!-- /.container -->
 
+
+  <!-- Modal
+       Pop-Up when the edit page is clicked.
+  ===============================================================================================================================-->        
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <!-- Put Image the user clicks on here -->
+            <label for="message-text" class="control-label">My Task</label>
+          </div>
+          
+
+          <!-- Modal Body -->
+          <!-- ===================== -->
+
+          <!-- Display title, description and time. -->
+          <div class="modal-body">
+              <div class="form-group">
+                <h1>
+                <label for="message-text" class="control-label">Task: Gym Time</label>
+                </h1>
+                <label for="message-text" class="control-label"> Description: Time to go to the gym.</label>         
+              </div>
+
+              <div class = "form-group">
+                  <font color="black">
+                    <label for="message-text" class="control-label">Expected Days Left: </label>
+                    <div>
+                    <label for="message-text" class="control-label">15 Days. Due at 11/15/2016 at 3 pm </label>
+                    </div>
+                    <strong>
+                      <span id="time"></span>
+                    </strong>           
+                </font> 
+              </div>
+              <div>
+                <h1>
+                <label for="message-text" class="control-label">Finished on Time? </label>
+                </h1>
+                
+              </div>
+              <form>
+                <div class="form-group">
+                  <label for="message-text" class="control-label">Description</label>
+                  <textarea class="form-control" id="message-text"></textarea>              
+                </div>
+              </form>
+
+              <button type="button" class="btn btn-submit" data-dismiss="modal">Yes</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+
+          </div>
+          
+        </div>
+      </div>
+  </div>
+
+
+  <!-- Modal
+       Pop-Up when the edit page is clicked.
+  ===============================================================================================================================-->        
+  <div class="modal fade" id="rateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <!-- Put Image the user clicks on here -->
+
+          </div>
+          
+
+          <!-- Modal Body -->
+          <!-- ===================== -->
+
+          <!-- Display title, description and time. -->
+          <div class="modal-body">
+              <div class="form-group">
+                <h1>Why did you procrastine?</label>
+                </h1>   
+              </div>
+
+              
+              <div>
+                <h2>
+                <label for="message-text" class="control-label">Reasons </label>
+                </h2>
+                
+              </div>
+              <form>
+                <div class="form-group">
+                  <label for="message-text" class="control-label">Description</label>
+                  <textarea class="form-control" id="message-text"></textarea>              
+                </div>
+              </form>
+
+              <button type="button" class="btn btn-submit" data-dismiss="modal">
+                Confirm
+              </button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                Cancel
+              </button>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+
+          </div>
+          
+        </div>
+      </div>
+  </div>
 
 
 
