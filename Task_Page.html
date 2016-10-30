@@ -94,11 +94,57 @@ body {
                   <h4 class="modal-title" id="myModalLabel">New Task</h4>
                 </div>
                 <div class="modal-body">
-                  Test1
+                  <form class="form-horizontal">
+    <fieldset>
+
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Name</label>
+            <div class="col-md-6">
+                <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="eventType">Type</label>
+            <div class="col-md-4">
+                <select id="eventType" name="eventType" class="form-control">
+                    <option value="TOURNAMENT">Study</option>
+                    <option value="PRACTICE">Math</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Appended Input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="eventDate">Date</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input id="eventDate" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
+                    <span class="input-group-addon">Calendar</span>
+                </div>
+
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="venueName">Descriptions</label>
+            <div class="col-md-6">
+                <input id="venueName" name="venueName" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+
+
+    </fieldset>
+</form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button id="submitButton" name="submitButton" class="btn btn-primary">Save</button>
+                <button id="cancelButton" name="cancelButton" class="btn btn-danger">Cancel</button>
                 </div>
               </div>
             </div>
@@ -106,82 +152,54 @@ body {
         </div>
       </div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class = "panel-title">Gym Time</h3>
-        </div>
-        <div class="panel-body">
-          <div class="panel-heading">
-            <!--h3 class = "panel-title">+ Add Task</h3-->
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>
+    
 
-            <!-- Modal -->
-            <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel1">Edit Your Task</h4>
-                  </div>
-                  <div class="modal-body">
-                    Test Changes.
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
+
+      <div class = "container">
+      <div class="list-group">
+
+        <a href="#" class="list-group-item">
+              
+          <div class="checkbox pull-right">
+              <label>
+              <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>        
+            </label>
+          </div>
+              
+              <div class="pull-left form-control-inline">
+            <h4 class="list-group-item-heading">Gym Workout</h4>
+            <p class="list-group-item-text">- Meet with Jim at 24 Hour Fitness Tomorrow.</p>      
               </div>
-            </div>
+
+              <span class="label label-danger pull-right">Pending</span>
+              
+              <div class="clearfix"></div>
+              
+          </a>
+        <a href="#" class="list-group-item">
+          
+          <div class="checkbox pull-right">
+            <label>
+              <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#rateModal">Rate</button>
+            </label>
           </div>
 
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class = "panel-title">Math Homework</h3>
-        </div>
-        <div class="panel-body">
-          Passed Due!
-          <div class="panel-heading">
-            <!--h3 class = "panel-title">+ Add Task</h3-->
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#rateModal">Rate</button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="RateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel2">Rate Your Task</h4>
-                  </div>
-                  <div class="modal-body">
-                    Test 3
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
+              <div class="pull-left">
+            <h4 class="list-group-item-heading">Math 109 Homework</h4>
+            <p class="list-group-item-text">- Review Induction. HW has no extension. </p>            
               </div>
-            </div>
-          </div>
-        </div>
+
+              <span class="label label-primary pull-right">Passed Due! </span>
+
+              <div class="clearfix"></div>
+
+        </a>
+        
+      </div>
+
+
 
       </div>
-    </div>
-    <!-- buttons -->
-    <!--div class = "container">
-      <a href = "#" class = "btn btn-success" role = "button">"Add Task"</a>
-      </div-->
-      <!-- /.container -->
 
 
       <!-- Modal
@@ -360,7 +378,7 @@ body {
                 <!-- Display title, description and time. -->
                 <div class="modal-body">
                   <div class="form-group">
-                    <h1>Why did you procrastine?</label>
+                    <h1>Why did you procrastinate?</label>
                     </h1>   
                   </div>
 
@@ -396,12 +414,7 @@ body {
                     </span>        
                   </div>
 
-                  <form>
-                    <div class="form-group">
-                      <label for="message-text" class="control-label">Description</label>
-                      <textarea class="form-control" id="message-text"></textarea>              
-                    </div>
-                  </form>
+                  
 
 
                   <form>
@@ -425,9 +438,14 @@ body {
                       </button>
                     </div>
 
-                    <div>
-                    
+                    <form>
+                    <div class="form-group">
+                      <label for="message-text" class="control-label">Description</label>
+                      <textarea class="form-control" id="message-text"></textarea>              
                     </div>
+                  </form>
+
+
 
 
                   </form>
