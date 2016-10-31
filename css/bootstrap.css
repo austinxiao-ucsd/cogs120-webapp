@@ -6789,3 +6789,13 @@ img.make-it-fit {
   padding-left:  0px;;
 
   }
+
+
+
+  .bgSizeContain {
+  height: 200px;
+  background-image: url(img/logo1.png);
+  background-size: contain;
+  border: 2px solid darkgray;
+  color: #000; text-shadow: 1px 1px 0 #fff;
+}
