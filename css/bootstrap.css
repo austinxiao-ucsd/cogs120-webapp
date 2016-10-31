@@ -6766,36 +6766,3 @@ button.close {
 .voffset8 { margin-top: 100px; }
 .voffset9 { margin-top: 150px; }
 
-div.fill-screen {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    
-}
-
-img.make-it-fit {
-    max-width: 99%;
-    max-height: 99%;
-}
-
-.homePic {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-left:  -15px;
-  padding-top:0px;
-  padding-right: 0px;
-  padding-left:  0px;;
-
-  }
-
-
-
-  .bgSizeContain {
-  height: 200px;
-  background-image: url(img/logo1.png);
-  background-size: contain;
-  border: 2px solid darkgray;
-  color: #000; text-shadow: 1px 1px 0 #fff;
-}
