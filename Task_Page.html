@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Bare - Start Bootstrap Template</title>
+    <title>Task Page</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -66,136 +66,140 @@ body {
       <!-- /.container -->
     </nav>
 
-    <!-- Page Content -->
-    <div class="container">
 
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2>Tasks</h2>
-        </div>
-      </div>
-      <!-- Tasks panel -->
+
+
+      <div class = "container">
+
+
+
+
+        <div class = "list-group">
+
+          <!-- Tasks panel -->
       <div class="panel panel-default">
         <div class="panel-heading">
           <!--h3 class = "panel-title">+ Add Task</h3-->
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          <!--button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
             Add Tasks
-          </button>
-
-          <!-- Modal -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <h4 class="modal-title" id="myModalLabel">New Task</h4>
-                </div>
-                <div class="modal-body">
-                  <form class="form-horizontal">
-    <fieldset>
+            </button-->
+            <a class="btn icon-btn btn-success" data-toggle="modal" data-target="#myModal"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
 
 
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Name</label>
-            <div class="col-md-6">
-                <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
 
-            </div>
-        </div>
-
-        <!-- Select Basic -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="eventType">Type</label>
-            <div class="col-md-4">
-                <select id="eventType" name="eventType" class="form-control">
-                    <option value="TOURNAMENT">Study</option>
-                    <option value="PRACTICE">Math</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Appended Input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="eventDate">Date</label>
-            <div class="col-md-4">
-                <div class="input-group">
-                    <input id="eventDate" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
-                    <span class="input-group-addon">Calendar</span>
-                </div>
-
-            </div>
-        </div>
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="venueName">Descriptions</label>
-            <div class="col-md-6">
-                <input id="venueName" name="venueName" type="text" placeholder="" class="form-control input-md">
-
-            </div>
-        </div>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">New Task</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal">
+                      <fieldset>
 
 
-    </fieldset>
-</form>
-                </div>
-                <div class="modal-footer">
-                  <button id="submitButton" name="submitButton" class="btn btn-primary">Save</button>
-                <button id="cancelButton" name="cancelButton" class="btn btn-danger">Cancel</button>
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="textinput">Name</label>
+                          <div class="col-md-6">
+                            <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+
+                          </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="eventType">Type</label>
+                          <div class="col-md-4">
+                            <select id="eventType" name="eventType" class="form-control">
+                              <option value="TOURNAMENT">Study</option>
+                              <option value="PRACTICE">Math</option>
+                              <option value="PRACTICE">Pet</option>
+                              <option value="PRACTICE">Sport</option>
+                              <option value="PRACTICE">Love</option>
+                              <option value="PRACTICE">Television</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!-- Appended Input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="eventDate">Date</label>
+                          <div class="col-md-4">
+                            <div class="input-group">
+                              <input id="eventDate" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
+                              <span class="input-group-addon">Calendar</span>
+                            </div>
+
+                          </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="venueName">Descriptions</label>
+                          <div class="col-md-6">
+                            <input id="venueName" name="venueName" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+                        
+                  </div>
+                  <div class="modal-footer">
+                    <button id="submitButton" name="submitButton" class="btn btn-primary">Save</button>
+                    <button id="cancelButton" name="cancelButton" class="btn btn-danger">Cancel</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
-      </div>
-
-    
 
 
-      <div class = "container">
-      <div class="list-group">
+        </div>
 
-        <a href="#" class="list-group-item">
-              
-          <div class="checkbox pull-right">
+        <div class="list-group">
+
+          <a href="#" class="list-group-item">
+
+            <div class="checkbox pull-right">
               <label>
-              <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>        
-            </label>
-          </div>
-              
-              <div class="pull-left form-control-inline">
-            <h4 class="list-group-item-heading">Gym Workout</h4>
-            <p class="list-group-item-text">- Meet with Jim at 24 Hour Fitness Tomorrow.</p>      
-              </div>
+                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>        
+              </label>
+            </div>
 
-              <span class="label label-danger pull-right">Pending</span>
-              
-              <div class="clearfix"></div>
-              
+            <div class="pull-left form-control-inline">
+              <h4 class="list-group-item-heading">Gym Workout</h4>
+              <p class="list-group-item-text">- Meet with Jim at 24 Hour Fitness Tomorrow.</p>      
+            </div>
+
+            <span class="label label-danger pull-right">Pending</span>
+
+            <div class="clearfix"></div>
+
           </a>
-        <a href="#" class="list-group-item">
-          
-          <div class="checkbox pull-right">
-            <label>
-              <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#rateModal">Rate</button>
-            </label>
-          </div>
+          <a href="#" class="list-group-item">
 
-              <div class="pull-left">
-            <h4 class="list-group-item-heading">Math 109 Homework</h4>
-            <p class="list-group-item-text">- Review Induction. HW has no extension. </p>            
-              </div>
+            <div class="checkbox pull-right">
+              <label>
+                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#rateModal">Rate</button>
+              </label>
+            </div>
 
-              <span class="label label-primary pull-right">Passed Due! </span>
+            <div class="pull-left">
+              <h4 class="list-group-item-heading">Math 109 Homework</h4>
+              <p class="list-group-item-text">- Review Induction. HW has no extension. </p>            
+            </div>
 
-              <div class="clearfix"></div>
+            <span class="label label-primary pull-right">Passed Due! </span>
 
-        </a>
-        
-      </div>
+            <div class="clearfix"></div>
+
+          </a>
+
+        </div>
 
 
 
@@ -245,92 +249,6 @@ body {
                 </div>
 
                 <div>
-
-                  <div class="container">
-                    <div class="row">
-                      <div class="span12">
-                        <table class="table-condensed table-bordered table-striped">
-                          <thead>
-                            <tr>
-                              <th colspan="7">
-                                <span class="btn-group">
-                                  <a class="btn"><i class="icon-chevron-left"></i></a>
-                                  <a class="btn-default">November 2016</a>
-                                  <a class="btn"><i class="icon-chevron-right"></i></a>
-                                </span>
-                              </th>
-                            </tr>
-                            <tr>
-                              <th>Su</th>
-                              <th>Mo</th>
-                              <th>Tu</th>
-                              <th>We</th>
-                              <th>Th</th>
-                              <th>Fr</th>
-                              <th>Sa</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td class="muted">29</td>
-                              <td class="muted">30</td>
-                              <td class="muted">31</td>
-                              <td>1</td>
-                              <td>2</td>
-                              <td>3</td>
-                              <td>4</td>
-                            </tr>
-                            <tr>
-                              <td>5</td>
-                              <td>6</td>
-                              <td>7</td>
-                              <td>8</td>
-                              <td>9</td>
-                              <td>10</td>
-                              <td>11</td>
-                            </tr>
-                            <tr>
-                              <td>12</td>
-                              <td>13</td>
-                              <td>14</td>
-                              <td>15</td>
-                              <td>16</td>
-                              <td>17</td>
-                              <td>18</td>
-                            </tr>
-                            <tr>
-                              <td>19</td>
-                              <td class="btn-primary"><strong>20</strong></td>
-                              <td>21</td>
-                              <td>22</td>
-                              <td>23</td>
-                              <td>24</td>
-                              <td>25</td>
-                            </tr>
-                            <tr>
-                              <td>26</td>
-                              <td>27</td>
-                              <td>28</td>
-                              <td>29</td>
-                              <td class="muted">1</td>
-                              <td class="muted">2</td>
-                              <td class="muted">3</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-
-
-
-                </div>
-
-
-                <div>
                   <h1>
                     <label for="message-text" class="control-label">Finished on Time? </label>
                   </h1>
@@ -343,13 +261,13 @@ body {
                   </div>
                 </form>
 
-                <button type="button" class="btn btn-submit" data-dismiss="modal">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+
               </div>
 
               <!-- Modal Footer -->
               <div class="modal-footer">
-
+                <button type="button" class="btn btn-submit" data-dismiss="modal">Yes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
               </div>
 
             </div>
@@ -414,7 +332,7 @@ body {
                     </span>        
                   </div>
 
-                  
+
 
 
                   <form>
@@ -439,11 +357,11 @@ body {
                     </div>
 
                     <form>
-                    <div class="form-group">
-                      <label for="message-text" class="control-label">Description</label>
-                      <textarea class="form-control" id="message-text"></textarea>              
-                    </div>
-                  </form>
+                      <div class="form-group">
+                        <label for="message-text" class="control-label">Description</label>
+                        <textarea class="form-control" id="message-text"></textarea>              
+                      </div>
+                    </form>
 
 
 
@@ -455,12 +373,12 @@ body {
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-submit" data-dismiss="modal">
-                        Confirm
-                        </button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                        Cancel
-                        </button>
+                  <button type="button" class="btn btn-submit" data-dismiss="modal">
+                    Confirm
+                  </button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Cancel
+                  </button>
                 </div>
 
               </div>
