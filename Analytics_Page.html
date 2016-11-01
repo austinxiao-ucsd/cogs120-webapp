@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,56 +16,157 @@
 
     <!-- Custom CSS -->
     <style>
-body {
-  padding-top: 70px;
-  /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
+
+        body {
+            padding-top: 50px;
+            margin-top: 50px;
+        }
+
+        .group {
+            width: 800px;
+            height: 1100px;
+            padding-top: 80px;
+        }
+        .group .subgroup {
+            width: 750px;
+            height: 450px;
+            padding: 80px;
+        }
+
+        #GroupA {
+            height: 700px;
+        }
+        .fixed {
+            position: fixed;
+        }
+
+        /* sidebar */
+        .bs-docs-sidebar {
+            padding-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* all links */
+        .bs-docs-sidebar .nav>li>a {
+            color: #999;
+            border-left: 2px solid transparent;
+            padding: 4px 20px;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        /* nested links */
+        .bs-docs-sidebar .nav .nav>li>a {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-left: 30px;
+            font-size: 12px;
+        }
+
+        /* active & hover links */
+        .bs-docs-sidebar .nav>.active>a, 
+        .bs-docs-sidebar .nav>li>a:hover, 
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #563d7c;                 
+            text-decoration: none;          
+            background-color: transparent;  
+            border-left-color: #563d7c; 
+        }
+        /* all active links */
+        .bs-docs-sidebar .nav>.active>a, 
+        .bs-docs-sidebar .nav>.active:hover>a,
+        .bs-docs-sidebar .nav>.active:focus>a {
+            font-weight: 700;
+        }
+        /* nested active links */
+        .bs-docs-sidebar .nav .nav>.active>a, 
+        .bs-docs-sidebar .nav .nav>.active:hover>a,
+        .bs-docs-sidebar .nav .nav>.active:focus>a {
+            font-weight: 500;
+        }
+
+        /* hide inactive nested list */
+        .bs-docs-sidebar .nav ul.nav {
+            display: none;           
+        }
+        /* show active nested list */
+        .bs-docs-sidebar .nav>.active>ul.nav {
+            display: block;           
+        }
+
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--Load the AJAX API-->
+
+
+    <!--Pie Chart -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['ID', 'X', 'Y', 'Temperature'],
-          ['1',   1,  1,      50],
-          ['2',   2,  -2,      250],
-          ['3',   3,  1,      100],
-          ['4',   4,  2,      50],
-          ['5',   5,  -3,      200],
-          ['6',   6,  1,      100],
-          ['7',   7,  2,      100]
-        ]);
+    <script type="text/javascript">
 
-        var options = {
-            title: 'Current Week, Green -> Yellow, Good Mood -> Bad Mood',
-            hAxis: {title: 'Timeline ->'},
-            vAxis: {title: 'Priority ->'}, 
-            colorAxis: {colors: ['green', 'yellow']},
-            bubble:{ 
-                textStyle:{
-                    fontSize:12
-                }
-            }
-        };
+      google.charts.load("current", {packages:["corechart"]});
+      
+      google.charts.setOnLoadCallback(drawPieChart);
 
-        var chart = new google.visualization.BubbleChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
+      google.charts.setOnLoadCallback(drawBarChart);
 
+      function drawPieChart() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Study',     11],
+          ['Social',      2],
+          ['Work',  7],
+          ['Entertainment', 2],
+          ['Health',    7]
+        ]);
 
-  </head>
+        var options = {
+          title: 'Task Catagory',
+          pieHole: 0.4,
+        };
 
-  <body>
+        var Pie_chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        Pie_chart.draw(data, options);
+      }
+
+      function drawBarChart() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Tags of Reasons', 'Frequency'],
+          ["Youtube", 21],
+          ["Games", 14],
+          ["Facebook", 12],
+          ["John", 6],
+          ['Other', 3]
+        ]);
+
+        var options = {
+          title: 'Reasons for procrastination',
+          width: 700,
+          legend: { position: 'none' },
+          chart: { title: 'Reasons for procrastination',
+                   subtitle: 'Frequency of being the reason' },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Frequency'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var Bar_chart = new google.visualization.BarChart(document.getElementById('top_x_div'));
+        Bar_chart.draw(data, options);
+      }
+    </script>
+
+</head>
+
+<body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -99,37 +200,69 @@ body {
       </div>
       <!-- /.container -->
     </nav>
-    <div class = "container">
-        <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="#">Current Week</a></li>
-            <li role="presentation"><a href="#">Last Week</a></li>
-            <li role="presentation"><a href="#">History</a></li>
-        </ul>
+
+    <!-- main body -->
+    <div class="container">
+        <!-- Main Content -->
+        <div class="row MainContent">
+            <!--Side Nav Bar -->
+            <nav class="col-xs-3 bs-docs-sidebar">
+                <ul id="sidebar" class="nav nav-stacked fixed">
+                    <li>
+                        <a href="#GroupA">Reason Analytics</a>
+                    </li>
+                    <li>
+                        <a href="#GroupB">Task Catagory Analytics</a>
+                        <ul class="nav nav-stacked">
+                            <li><a href="#GroupBSub1">Pie Chart</a></li>
+                            <li><a href="#GroupBSub2">Bar Chart</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#GroupC">Emotion Anlytics</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!--Main Content -->
+            <div class="col-xs-9">
+
+                <section id="GroupA" class="group">
+                    <h3>Reason Analytics</h3>
+                    <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+                </section>
+
+                <section id="GroupB" class="group">
+                    <h3>Task Catagory Analytics</h3>
+                    <div id="GroupBSub1" class="subgroup">
+                        <h4>Pie Chart</h4>
+                        <div class="container"></div>
+                        <div id="donutchart" style="width: 700px; height: 400px;"></div>
+                    </div>
+                    <div id="GroupBSub2" class="subgroup">
+                        <h4>Bar Chart</h4>
+                        <!--<div class="container"></div>
+                        <div id="donutchart" style="width: 700px; height: 400px;"></div>-->
+                    </div>
+                </section>
+
+                <section id="GroupC" class="group">
+                    <h3>Emotion Anlytics</h3>
+                </section>    
+            </div>
+        </div>
     </div>
-    <!-- Page Content -->
-    <div class="container"></div>
-    <div id="chart_div" style="width: 60%; height: 70%;"></div>
-  </body>
-</html> 
- 
-    <!-- buttons -->
-    <!--div class = "container">
-      <a href = "#" class = "btn btn-success" role = "button">"Add Task"</a>
-      </div-->
-      <!-- /.container -->
+</body>
 
+</html>
 
-
-
-
-
-
-      <!-- jQuery Version 1.11.1 -->
+<!-- jQuery Version 1.11.1 -->
       <script src="js/jquery.js"></script>
 
       <!-- Bootstrap Core JavaScript -->
       <script src="js/bootstrap.min.js"></script>
 
+      <script src="js/Analytics_Page.js"></script>
   </body>
 
 </html>
