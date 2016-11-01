@@ -16,12 +16,111 @@
 
     <!-- Custom CSS -->
     <style>
-    body {
-        padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    }
+        body {
+           padding-top: 50px;
 
+            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        }
+        header {
+          background-image: url('img/logo1.png');
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          background-position: center center;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          background-size: cover;
+          -o-background-size: cover;
+          text-align: center;
+          color: white;
+        }
+        header .intro-text {
+          padding-top: 100px;
+          padding-bottom: 50px;
+        }
+        header .intro-text .intro-lead-in {
+          font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-style: italic;
+          font-size: 22px;
+          line-height: 22px;
+          margin-bottom: 25px;
+        }
+        header .intro-text .intro-heading {
+          font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 50px;
+          line-height: 50px;
+          margin-bottom: 25px;
+        }
+        @media (min-width: 768px) {
+          header .intro-text {
+            padding-top: 300px;
+            padding-bottom: 200px;
+          }
+          header .intro-text .intro-lead-in {
+            font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-style: italic;
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 25px;
+          }
+          header .intro-text .intro-heading {
+            font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 75px;
+            line-height: 75px;
+            margin-bottom: 50px;
+          }
+        }
 
+        .btn-xl {
+          color: white;
+          background-color: #fed136;
+          border-color: #fed136;
+          font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          text-transform: uppercase;
+          font-weight: 700;
+          border-radius: 3px;
+          font-size: 18px;
+          padding: 20px 40px;
+        }
+        .btn-xl:hover,
+        .btn-xl:focus,
+        .btn-xl:active,
+        .btn-xl.active,
+        .open .dropdown-toggle.btn-xl {
+          color: white;
+          background-color: #fec503;
+          border-color: #f6bf01;
+        }
+        .btn-xl:active,
+        .btn-xl.active,
+        .open .dropdown-toggle.btn-xl {
+          background-image: none;
+        }
+        .btn-xl.disabled,
+        .btn-xl[disabled],
+        fieldset[disabled] .btn-xl,
+        .btn-xl.disabled:hover,
+        .btn-xl[disabled]:hover,
+        fieldset[disabled] .btn-xl:hover,
+        .btn-xl.disabled:focus,
+        .btn-xl[disabled]:focus,
+        fieldset[disabled] .btn-xl:focus,
+        .btn-xl.disabled:active,
+        .btn-xl[disabled]:active,
+        fieldset[disabled] .btn-xl:active,
+        .btn-xl.disabled.active,
+        .btn-xl[disabled].active,
+        fieldset[disabled] .btn-xl.active {
+          background-color: #fed136;
+          border-color: #fed136;
+        }
+        .btn-xl .badge {
+          color: #fed136;
+          background-color: white;
+        }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,20 +132,22 @@
 
 </head>
 
+
 <body>
-    <body style="background-size: cover; background-repeat: no-repeat; background-color: #FFFFFF;">
-    <div class="col-xs-12 hidden-sm hidden-md hidden-lg">  
-        <img class="img-responsive" src="img/logo1.png" />    <!--Mobile-->
-    </div>
+
+    <!--body style="background-size: cover; background-repeat: no-repeat; background-color: #FFFFFF;"-->
+    <!--div class="col-xs-12 hidden-sm hidden-md hidden-lg">  
+        <img class="img-responsive" src="img/logo1.png" /-->    <!--Mobile-->
+    <!--/div>
     <div class="hidden-xs col-sm-12 hidden-md hidden-lg">
-        <img class="img-responsive" src="img/logo1.png" />   <!--Tab-->
-    </div>
+        <img class="img-responsive" src="img/logo1.png" /-->   <!--Tab-->
+    <!--/div>
     <div class="hidden-xs hidden-sm col-md-12 hidden-lg">
-        <img class="img-responsive" src="img/logo1.png" />   <!--Desktop-->
-    </div>
+        <img class="img-responsive" src="img/logo1.png" /-->   <!--Desktop-->
+    <!--/div>
     <div class="hidden-xs hidden-sm hidden-md col-lg-12">
-        <img class="img-responsive" src="img/logo1.png" />  <!--Large-->
-    </div>
+        <img class="img-responsive" src="img/logo1.png" /-->  <!--Large-->
+    <!--/div-->
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -83,12 +184,52 @@
 
 
 
-
     <!--body background="img/logo1.png"-->
-    <!--body style="background: url('img/logo1.png'); background-size: cover; background-repeat: no-repeat; background-color: #222;"-->
+    <body style="background: background-size: cover; background-repeat: no-repeat; background-color: #565546;">
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="row">
+        <!-- Header -->
+    <header>
+
+        <div class="container">
+        <h1> Help Yourself 
+        Fight Procrastination</h1>
+
+            <div class="container col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
+            <br />
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1>Login</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-user" style="width: auto"></i>
+                            </span>
+                            <input id="txtUsuario" runat="server" type="text" class="form-control" name="user" placeholder="Username" required="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-lock" style="width: auto"></i>
+                            </span>
+                            <input id="txtSenha" runat="server" type="password" class="form-control" name="password" placeholder="Password" required="" />
+                        </div>
+                    </div>
+                    <button id="btnLogin" runat="server" class="btn btn-default" style="width: 100%">
+                        Log In<i class="glyphicon glyphicon-log-in"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+            <div class="intro-text">
+                <a href="#services" class="page-scroll btn btn-default btn-xl">Sign Up</a>
+            </div>
+        </div>
+    </header>
         
 
         <div class="row">
@@ -108,14 +249,13 @@
             </div>
         </div-->
         <!-- buttons -->
-        <div class = "text-center voffset6">
-            <p></p> <!-- spacer -->
-            <div class="container">
+        <!--div class = "text-center voffset6"-->
+            <!--div class="container">
                 <a href = "Task_Page.html" class = "btn btn-success" role = "button">My Tasks</a>
                 <a href = "Analytics_Page.html" class = "btn btn-primary" role = "button">Analytics</a>
             </div>
-        </div>
-    </container>
+        </div-->
+    </div>
 
     </body>
 

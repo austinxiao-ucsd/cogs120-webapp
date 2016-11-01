@@ -21,38 +21,38 @@ body {
   /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
     div.fill-screen {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    
-}
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
 
-img.make-it-fit {
-    max-width: 99%;
-    max-height: 99%;
-}
+    }
 
-.homePic {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-left:  -15px;
-  padding-top:0px;
-  padding-right: 0px;
-  padding-left:  0px;;
+    img.make-it-fit {
+      max-width: 99%;
+      max-height: 99%;
+    }
 
-  }
+    .homePic {
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-left:  -15px;
+      padding-top:0px;
+      padding-right: 0px;
+      padding-left:  0px;;
+
+    }
 
 
 
-  .bgSizeContain {
-  height: 200px;
-  background-image: url(img/logo1.png);
-  background-size: contain;
-  border: 2px solid darkgray;
-  color: #000; text-shadow: 1px 1px 0 #fff;
-}
+    .bgSizeContain {
+      height: 200px;
+      background-image: url(img/logo1.png);
+      background-size: contain;
+      border: 2px solid darkgray;
+      color: #000; text-shadow: 1px 1px 0 #fff;
+    }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -102,93 +102,93 @@ img.make-it-fit {
 
 
 
-      <div class = "container">
+    <div class = "container">
 
 
 
 
-        <div class = "list-group">
+      <div class = "list-group">
 
-          <!-- Tasks panel -->
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <!--h3 class = "panel-title">+ Add Task</h3-->
-          <!-- Button trigger modal -->
-          <!--button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-            Add Tasks
-            </button-->
-            <a class="btn icon-btn btn-success" data-toggle="modal" data-target="#myModal"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
-
-
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">New Task</h4>
-                  </div>
-                  <div class="modal-body">
-                    <form class="form-horizontal">
-                      <fieldset>
+        <!-- Tasks panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <!--h3 class = "panel-title">+ Add Task</h3-->
+            <!-- Button trigger modal -->
+            <!--button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+              Add Tasks
+              </button-->
+              <a class="btn icon-btn btn-success" data-toggle="modal" data-target="#myModal"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span> Add</a>
 
 
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="textinput">Name</label>
-                          <div class="col-md-6">
-                            <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
 
-                          </div>
-                        </div>
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel">New Task</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form class="form-horizontal">
+                        <fieldset>
 
-                        <!-- Select Basic -->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="eventType">Type</label>
-                          <div class="col-md-4">
-                            <select id="eventType" name="eventType" class="form-control">
-                              <option value="TOURNAMENT">Study</option>
-                              <option value="PRACTICE">Math</option>
-                              <option value="PRACTICE">Pet</option>
-                              <option value="PRACTICE">Sport</option>
-                              <option value="PRACTICE">Love</option>
-                              <option value="PRACTICE">Television</option>
-                            </select>
-                          </div>
-                        </div>
 
-                        <!-- Appended Input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="eventDate">Date</label>
-                          <div class="col-md-4">
-                            <div class="input-group">
-                              <input id="eventDate" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
-                              <span class="input-group-addon">Calendar</span>
+                          <!-- Text input-->
+                          <div class="form-group">
+                            <label class="col-md-4 control-label" for="textinput">Name</label>
+                            <div class="col-md-6">
+                              <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+
                             </div>
-
                           </div>
-                        </div>
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="venueName">Descriptions</label>
-                          <div class="col-md-6">
-                            <input id="venueName" name="venueName" type="text" placeholder="" class="form-control input-md">
 
+                          <!-- Select Basic -->
+                          <div class="form-group">
+                            <label class="col-md-4 control-label" for="eventType">Type</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">Study</option>
+                                <option value="PRACTICE">Math</option>
+                                <option value="PRACTICE">Pet</option>
+                                <option value="PRACTICE">Sport</option>
+                                <option value="PRACTICE">Love</option>
+                                <option value="PRACTICE">Television</option>
+                              </select>
+                            </div>
                           </div>
-                        </div>
-                        
-                  </div>
-                  <div class="modal-footer">
-                    <button id="submitButton" name="submitButton" class="btn btn-primary">Save</button>
-                    <button id="cancelButton" name="cancelButton" class="btn btn-danger">Cancel</button>
+
+                          <!-- Appended Input-->
+                          <div class="form-group">
+                            <label class="col-md-4 control-label" for="eventDate">Date</label>
+                            <div class="col-md-4">
+                              <div class="input-group">
+                                <input id="eventDate" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
+                                <span class="input-group-addon">Calendar</span>
+                              </div>
+
+                            </div>
+                          </div>
+                          <!-- Text input-->
+                          <div class="form-group">
+                            <label class="col-md-4 control-label" for="venueName">Descriptions</label>
+                            <div class="col-md-6">
+                              <input id="venueName" name="venueName" type="text" placeholder="" class="form-control input-md">
+
+                            </div>
+                          </div>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button id="submitButton" name="submitButton" class="btn btn-primary">Save</button>
+                      <button id="cancelButton" name="cancelButton" class="btn btn-danger">Cancel</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-        </div>
+          </div>
 
 
         </div>
