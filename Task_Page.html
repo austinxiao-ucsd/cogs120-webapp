@@ -93,6 +93,9 @@ body {
             <li>
               <a href="Help_Page.html">Help</a>
             </li>
+            <li>
+              <a >Log out</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -205,10 +208,11 @@ body {
 
             <div class="pull-left form-control-inline">
               <h4 class="list-group-item-heading">Gym Workout</h4>
-              <p class="list-group-item-text">- Meet with Jim at 24 Hour Fitness Tomorrow.</p>      
+              <p class="list-group-item-text">- Meet with Jim at 24 Hour Fitness Tomorrow.</p> 
+              <p class="list-group-item-text">- Expected Due Time: 6:00pm Oct 15th </p>      
             </div>
 
-            <span class="label label-danger pull-right">Pending</span>
+            <span class="label label-primary pull-right">Pending</span>
 
             <div class="clearfix"></div>
 
@@ -217,16 +221,20 @@ body {
 
             <div class="checkbox pull-right">
               <label>
-                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#rateModal">Rate</button>
+                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#completedModal">Completed</button>
+              </label>
+              <label>
+                <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#incompletedModal">Incompleted</button>
               </label>
             </div>
 
             <div class="pull-left">
               <h4 class="list-group-item-heading">Math 109 Homework</h4>
-              <p class="list-group-item-text">- Review Induction. HW has no extension. </p>            
+              <p class="list-group-item-text">- Review Induction. HW has no extension. </p> 
+              <p class="list-group-item-text">- Expected Due Time: 3:00pm Oct 10th </p>              
             </div>
 
-            <span class="label label-primary pull-right">Passed Due! </span>
+            <span class="label label-danger pull-right">Passed Due! </span>
 
             <div class="clearfix"></div>
 
@@ -309,9 +317,9 @@ body {
 
 
         <!-- Modal
-          Pop-Up when the edit page is clicked.
+          Pop-Up when the  "incompleted" button is clicked.
           ===============================================================================================================================-->        
-          <div class="modal fade" id="rateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="incompletedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
 
@@ -369,8 +377,65 @@ body {
 
 
                   <form>
-                    <h3>Evaluation</h3>
+                    <h3>Rate Your Emotion</h3>
+                    <h5>How happy do you feel?</h5>
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div>
 
+                    <h5>How angry do you feel?</h5>
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div>
+
+                    <h5>How anxious do you feel?</h5>
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div>
+
+                    <h5>How satisfied do you feel?</h5>
                     <div class="review-block-rate">
                       <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
                         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -418,6 +483,133 @@ body {
             </div>
           </div>
 
+
+<!--pops out when the "completed" button is pressed -->
+ <div class="modal fade" id="completedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <!-- Put Image the user clicks on here -->
+
+                </div>
+
+
+                <!-- Modal Body -->
+                <!-- ===================== -->
+
+                <!-- Display title, description and time. -->
+                <div class="modal-body">
+                  
+                  <h3>Good Job!</h3>
+                  <form>
+                    <h3>Rate Your Emotion</h3>
+                    <h5>How happy do you feel?</h5>
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div>
+
+                    <h5>How angry do you feel?</h5>
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div>
+
+                    <h5>How anxious do you feel?</h5>
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div>
+
+                    <h5>How satisfied do you feel?</h5>
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div>
+
+                    <form>
+                      <div class="form-group">
+                        <label for="message-text" class="control-label">Description</label>
+                        <textarea class="form-control" id="message-text"></textarea>              
+                      </div>
+                    </form>
+
+
+
+
+                  </form>
+
+
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-submit" data-dismiss="modal">
+                    Confirm
+                  </button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Cancel
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
 
 
 

@@ -34,7 +34,7 @@
           color: white;
         }
         header .intro-text {
-          padding-top: 100px;
+          padding-top: 200px;
           padding-bottom: 50px;
         }
         header .intro-text .intro-lead-in {
@@ -54,7 +54,7 @@
         }
         @media (min-width: 768px) {
           header .intro-text {
-            padding-top: 300px;
+            padding-top: 150px;
             padding-bottom: 200px;
           }
           header .intro-text .intro-lead-in {
@@ -121,6 +121,22 @@
           color: #fed136;
           background-color: white;
         }
+        .btn-hm {
+          color: #F1C40F;
+          background-color: #fed136;
+          border-color: #fed136;
+          font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          text-transform: uppercase;
+          font-weight: 700;
+          padding: 10px 16px;
+          font-size: 18px;
+          line-height: 1.3333333;
+          border-radius: 6px;
+        }
+        .border-right{
+          border-right: 1px solid #333;
+        }
+
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -176,6 +192,9 @@
                     <li>
                         <a href="Help_Page.html">Help</a>
                     </li>
+                    <li>
+                        <a >Log out</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -185,50 +204,70 @@
 
 
     <!--body background="img/logo1.png"-->
-    <body style="background: background-size: cover; background-repeat: no-repeat; background-color: #565546;">
+    <body style="background: background-size: cover; background-repeat: no-repeat; background-color: #101010;"> <!--#f1c40f;"-->
+
+
+    <header>
+            <div class = "container">
+                <div class="intro-text">
+                    <div class="intro-heading">PRO</div>
+                    <div class="intro-lead-in">Help Yourself Fight Procrastination</div>
+                    <div class = "row voffset6">
+                        <p></p>
+                        <a href="#services" class="page-scroll btn btn-default btn-xl" data-toggle="modal" data-target="#myModal">Get Started</a>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                             </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="row-sm-height">
+                                <div class="col-xs-12 col-sm-6 col-sm-height border-right">
+                                  
+                                  
+                                  <div class = "text-primary">Task</div>
+                                  <div class = "text-primary text-left">In Task page, you will create personal data by seting up tasks and rating passed due tasks </div>
+                                  
+
+                                  
+                                  <a class="btn btn-success btn-lg" href="Task_Page.html" role="button">Go Task</a>
+                                   
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-sm-height">
+
+                                  <div class = "text-primary">Analytics</div>
+                                  <div class = "text-primary text-left">In Analytics page, you will receive analysis generated from your personal procrastinating data </div>
+                                  
+                                   <a class="btn btn-success btn-lg" href = "Analytics_Page.html" role= "button">Go Analytics</a>
+                                </div>
+                                </div> 
+                              </div> 
+                      
+                     
+                            </div>
+                          </div>
+                  </div>
+                 </div>
+             
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <!-- Page Content -->
     <div class="row">
         <!-- Header -->
-    <header>
 
-        <div class="container">
-        <h1> Fight Procrastination with Pro.</h1>
-
-            <div class="container col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
-            <br />
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h1>Login</h1>
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="glyphicon glyphicon-user" style="width: auto"></i>
-                            </span>
-                            <input id="txtUsuario" runat="server" type="text" class="form-control" name="user" placeholder="Username" required="" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="glyphicon glyphicon-lock" style="width: auto"></i>
-                            </span>
-                            <input id="txtSenha" runat="server" type="password" class="form-control" name="password" placeholder="Password" required="" />
-                        </div>
-                    </div>
-                    <button id="btnLogin" runat="server" class="btn btn-default" style="width: 100%">
-                        Log In<!--i class="glyphicon glyphicon-log-in"></i-->
-                    </button>
-                </div>
-            </div>
-        </div>
-            <div class="intro-text">
-                <a href="#services" class="page-scroll btn btn-default btn-xl">Sign Up</a>
-            </div>
-        </div>
-    </header>
         
 
         <div class="row">

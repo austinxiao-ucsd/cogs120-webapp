@@ -34,7 +34,7 @@
           color: white;
         }
         header .intro-text {
-          padding-top: 200px;
+          padding-top: 100px;
           padding-bottom: 50px;
         }
         header .intro-text .intro-lead-in {
@@ -54,7 +54,7 @@
         }
         @media (min-width: 768px) {
           header .intro-text {
-            padding-top: 150px;
+            padding-top: 300px;
             padding-bottom: 200px;
           }
           header .intro-text .intro-lead-in {
@@ -165,7 +165,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                    <a href="#">Home</a>
+                    <!--a href="#">Home</a>
                     </li>
                     <li>
                         <a href="Task_Page.html">Task</a>
@@ -174,7 +174,7 @@
                         <a href="Analytics_Page.html">Analytics</a>
                     </li>
                     <li>
-                        <a href="Help_Page.html">Help</a>
+                        <a href="Help_Page.html">Help</a-->
                     </li>
                 </ul>
             </div>
@@ -185,27 +185,52 @@
 
 
     <!--body background="img/logo1.png"-->
-    <body style="background: background-size: cover; background-repeat: no-repeat; background-color: #101010;"> <!--#f1c40f;"-->
-
-
-    <header>
-            <div class = "container">
-                <div class="intro-text">
-                    <div class="intro-heading">PRO</div>
-                    <div class="intro-lead-in">Help Yourself Fight Procrastination</div>
-                    <div class = "row voffset6">
-                        <p></p>
-                        <a href="#services" class="page-scroll btn btn-default btn-xl">Get Started</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <body style="background: background-size: cover; background-repeat: no-repeat; background-color: #565546;">
 
     <!-- Page Content -->
     <div class="row">
         <!-- Header -->
+    <header>
 
+        <div class="container">
+        <h1> Fight Procrastination with Pro.</h1>
+
+            <div class="container col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
+            <br />
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1>Login</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-user" style="width: auto"></i>
+                            </span>
+                            <input id="txtUsuario" runat="server" type="text" class="form-control" name="user" placeholder="Username" required="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-lock" style="width: auto"></i>
+                            </span>
+                            <input id="txtSenha" runat="server" type="password" class="form-control" name="password" placeholder="Password" required="" />
+                        </div>
+                    </div>
+                    <!--button id="btnLogin" class="btn btn-default" style="width: 100%" href="home.html"-->
+                       <a href = "home.html" class = "btn btn-default" style="width: 100%" role = "button">Log In</a>
+                        <!--i class="glyphicon glyphicon-log-in"></i-->
+                      
+                    <!--/button-->
+                </div>
+            </div>
+        </div>
+            <div class="intro-text">
+                <a href="#services" class="page-scroll btn btn-default btn-xl">Sign Up</a>
+            </div>
+        </div>
+    </header>
         
 
         <div class="row">
