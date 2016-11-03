@@ -19,9 +19,9 @@
       
             $("#driver").click(function(event){
                $.getJSON('result.json', function(jd) {
-                  $('#stage').html('<p> Name: ' + jd.name + '</p>');
-                  $('#stage').append('<p>Age : ' + jd.age+ '</p>');
-                  $('#stage').append('<p> Sex: ' + jd.sex+ '</p>');
+                  $('#stage').html('<p> Task Name: ' + jd.name + '</p>');
+                  $('#stage').append('<p> Place : ' + jd.place+ '</p>');
+                  $('#stage').append('<p> Time: ' + jd.time+ '</p>');
                });
             });
         

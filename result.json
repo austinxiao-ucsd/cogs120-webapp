@@ -1,5 +1,5 @@
 {
-"name": "Clean Up Bedroom",
-"time" : "tomorrow",
-"place": "home"
+"name": "Clean up room.",
+"place" : "home",
+"time": "tomorrow"
 }
