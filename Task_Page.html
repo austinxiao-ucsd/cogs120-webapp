@@ -15,12 +15,13 @@
          src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     
       <script type = "text/javascript" language = "javascript">
+          $("head").data("test", 1);
          $(document).ready(function() {
       
             $("#driver").click(function(event){
                $.getJSON('result.json', function(jd) {
                   var element = $('#stage').html('<p> Task Name: ' + jd.name + '</p>');
-                  $("head").data("test", 1);
+                  //$("head").data("test", 1);
                   $('#stage').append('<p> Place : ' + jd.place+ '</p>');
                   $('#stage').append('<p> Time: ' + jd.time+ '</p>');
                });
@@ -232,17 +233,17 @@ body {
               <script type = "text/javascript" language = "javascript">
                 $(document).ready(function() {
                   
-                  console.log($("head").data("test"));
-            // $("#driver").click(function(event){
-            //    $.getJSON('result.json', function(jd) {
-            //       var element = $('#stage').html('<p> Task Name: ' + jd.name + '</p>');
-            //       $("head").data("test", 1);
-            //       $('#stage').append('<p> Place : ' + jd.place+ '</p>');
-            //       $('#stage').append('<p> Time: ' + jd.time+ '</p>');
-            //    });
-            });
+                    console.log($("head").data("test"));
+                    // $("#driver").click(function(event){
+                    //    $.getJSON('result.json', function(jd) {
+                    //       var element = $('#stage').html('<p> Task Name: ' + jd.name + '</p>');
+                    //       $("head").data("test", 1);
+                    //       $('#stage').append('<p> Place : ' + jd.place+ '</p>');
+                    //       $('#stage').append('<p> Time: ' + jd.time+ '</p>');
+                    //    });
+                    });
 
-      </script>
+              </script>
 
               <p class="list-group-item-text">- Meet with Jim at 24 Hour Fitness Tomorrow.</p> 
               <p class="list-group-item-text">- Expected Due Time: 6:00pm Oct 15th </p>      
