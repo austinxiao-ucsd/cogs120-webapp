@@ -19,7 +19,8 @@
       
             $("#driver").click(function(event){
                $.getJSON('result.json', function(jd) {
-                  $('#stage').html('<p> Task Name: ' + jd.name + '</p>');
+                  var element = $('#stage').html('<p> Task Name: ' + jd.name + '</p>');
+                  $("head").data("test", 1);
                   $('#stage').append('<p> Place : ' + jd.place+ '</p>');
                   $('#stage').append('<p> Time: ' + jd.time+ '</p>');
                });
@@ -226,7 +227,24 @@ body {
             </div>
 
             <div class="pull-left form-control-inline">
+            
               <h4 class="list-group-item-heading">Gym Workout</h4>
+              <script type = "text/javascript" language = "javascript">
+                $(document).ready(function() {
+                  
+                  console.log($("head").data("test"));
+            // $("#driver").click(function(event){
+            //    $.getJSON('result.json', function(jd) {
+            //       var element = $('#stage').html('<p> Task Name: ' + jd.name + '</p>');
+            //       $("head").data("test", 1);
+            //       $('#stage').append('<p> Place : ' + jd.place+ '</p>');
+            //       $('#stage').append('<p> Time: ' + jd.time+ '</p>');
+            //    });
+            });
+        
+         });
+      </script>
+
               <p class="list-group-item-text">- Meet with Jim at 24 Hour Fitness Tomorrow.</p> 
               <p class="list-group-item-text">- Expected Due Time: 6:00pm Oct 15th </p>      
             </div>
