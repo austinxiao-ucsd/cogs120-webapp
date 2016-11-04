@@ -114,9 +114,6 @@ body {
             <li>
               <a href="Help_Page.html">Help</a>
             </li>
-            <li>
-              <a >Log out</a>
-            </li>
           </ul>
         </div>
       </div>
@@ -162,9 +159,21 @@ body {
 
                           <!-- Text input-->
                           <div class="form-group">
-                            <label class="col-md-4 control-label" for="textinput">Name</label>
+                            <label class="col-md-4 control-label" for="textinput">Task Name</label>
                             <div class="col-md-6">
                               <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+
+                            </div>
+                          </div>
+
+                          <!-- Appended Input-->
+                          <div class="form-group">
+                            <label class="col-md-4 control-label" for="eventDate">Expected Due Date</label>
+                            <div class="col-md-4">
+                              <div class="input-group">
+                                <input id="eventDate" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
+                                <span class="input-group-addon">Calendar</span>
+                              </div>
 
                             </div>
                           </div>
@@ -184,17 +193,30 @@ body {
                             </div>
                           </div>
 
-                          <!-- Appended Input-->
+                          <!-- Select Basic -->
                           <div class="form-group">
-                            <label class="col-md-4 control-label" for="eventDate">Date</label>
+                            <label class="col-md-4 control-label" for="eventType">How many people involved other than youself?</label>
                             <div class="col-md-4">
-                              <div class="input-group">
-                                <input id="eventDate" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
-                                <span class="input-group-addon">Calendar</span>
-                              </div>
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">0</option>
+                                <option value="PRACTICE">1</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">more than 3</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+
+                          <!-- Text input-->
+                          <div class="form-group">
+                            <label class="col-md-4 control-label" for="venueName">Name of people involved</label>
+                            <div class="col-md-6">
+                              <input id="venueName" name="venueName" type="text" placeholder="" class="form-control input-md">
 
                             </div>
                           </div>
+                          
                           <!-- Text input-->
                           <div class="form-group">
                             <label class="col-md-4 control-label" for="venueName">Descriptions</label>
@@ -221,11 +243,7 @@ body {
 
           <a href="#" class="list-group-item">
 
-            <div class="checkbox pull-right">
-              <label>
-                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>        
-              </label>
-            </div>
+           
 
             <div class="pull-left form-control-inline">
             
@@ -246,17 +264,30 @@ body {
               </script>
 
               <p class="list-group-item-text">- Meet with Jim at 24 Hour Fitness Tomorrow.</p> 
-              <p class="list-group-item-text">- Expected Due Time: 6:00pm Oct 15th </p>      
+              <p class="list-group-item-text">- Expected Due Date: 10/16/16 </p>      
+            </div>
+             <div class="checkbox pull-right">
+              <span class="label label-primary pull-right">Pending</span>
+              <label>
+                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>        
+              </label>
             </div>
 
-            <span class="label label-primary pull-right">Pending</span>
+            
 
             <div class="clearfix"></div>
 
           </a>
           <a href="#" class="list-group-item">
 
+            <div class="pull-left">
+              <h4 class="list-group-item-heading">Math 109 Homework</h4>
+              <p class="list-group-item-text">- Review Induction. HW has no extension. </p> 
+              <p class="list-group-item-text">- Expected Due Date: 10/10/16 </p>              
+            </div>
+
             <div class="checkbox pull-right">
+              <span class="label label-danger pull-right">Passed Due! </span>
               <label>
                 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#completedModal">Completed</button>
               </label>
@@ -265,13 +296,9 @@ body {
               </label>
             </div>
 
-            <div class="pull-left">
-              <h4 class="list-group-item-heading">Math 109 Homework</h4>
-              <p class="list-group-item-text">- Review Induction. HW has no extension. </p> 
-              <p class="list-group-item-text">- Expected Due Time: 3:00pm Oct 10th </p>              
-            </div>
+            
 
-            <span class="label label-danger pull-right">Passed Due! </span>
+            
 
             <div class="clearfix"></div>
 
@@ -378,7 +405,7 @@ body {
                     </h1>   
                   </div>
 
-
+ <div class="pull-left">
                   <div>
                     <h2>
                       <label for="message-text" class="control-label">Reasons </label>
@@ -413,10 +440,10 @@ body {
 
 
 
-                  <form>
+                  <!--form>
                     <h3>Rate Your Emotion</h3>
-                    <h5>How happy do you feel?</h5>
-                    <div class="review-block-rate">
+                    <h5>How happy do you feel?</h5-->
+                    <!--div class="review-block-rate">
                       <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
                         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                       </button>
@@ -432,47 +459,42 @@ body {
                       <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
                         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                       </button>
-                    </div>
+                    </div-->
 
-                    <h5>How angry do you feel?</h5>
-                    <div class="review-block-rate">
-                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                      </button>
-                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                      </button>
-                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                      </button>
-                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                      </button>
-                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                      </button>
-                    </div>
+<div class="pull-left">
+                    <div class="form-group" >
+                            <label class="col-md-4 control-label" for="eventType">How happy you feel about yourself</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">1(least happy)</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">4</option>
+                                <option value="PRACTICE">5(most happy)</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                        </div>
 
-                    <h5>How anxious do you feel?</h5>
-                    <div class="review-block-rate">
-                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                      </button>
-                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                      </button>
-                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                      </button>
-                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                      </button>
-                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                      </button>
-                    </div>
 
-                    <h5>How satisfied do you feel?</h5>
+<div class="pull-left">
+                    <div class="form-group" >
+                            <label class="col-md-4 control-label" for="eventType">How angry you feel about yourself</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">1(least angry)</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">4</option>
+                                <option value="PRACTICE">5(most angry)</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                    <!--h5>How angry do you feel?</h5>
                     <div class="review-block-rate">
                       <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
                         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -489,7 +511,92 @@ body {
                       <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
                         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                       </button>
-                    </div>
+                    </div-->
+
+<div class="pull-left">
+                     <div class="form-group">
+                            <label class="col-md-4 control-label" for="eventType">How anxious you feel about yourself</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">1(least anxious)</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">4</option>
+                                <option value="PRACTICE">5(most anxious)</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+<div class="pull-left">
+                      <div class="form-group">
+                            <label class="col-md-4 control-label" for="eventType">How satisfied you feel about yourself</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">1(least satisfied)</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">4</option>
+                                <option value="PRACTICE">5(most satisfied)</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                          <div class="form-group">
+                            <label class="col-md-4 control-label" for="eventType">How positive people involved will feel about you</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">1(least positive)</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">4</option>
+                                <option value="PRACTICE">5(most positive)</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                          </div>
+
+                    <!--h5>How anxious do you feel?</h5>
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div-->
+
+                    <!--h5>How satisfied do you feel?</h5>
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div-->
 
                     <form>
                       <div class="form-group">
@@ -530,7 +637,7 @@ body {
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <!-- Put Image the user clicks on here -->
-
+<h1>Good Job!</h1>
                 </div>
 
 
@@ -540,8 +647,8 @@ body {
                 <!-- Display title, description and time. -->
                 <div class="modal-body">
                   
-                  <h3>Good Job!</h3>
-                  <form>
+                  
+                  <!--form>
                     <h3>Rate Your Emotion</h3>
                     <h5>How happy do you feel?</h5>
                     <div class="review-block-rate">
@@ -629,10 +736,110 @@ body {
 
 
 
-                  </form>
+                  </form-->
 
 
-                </div>
+<div class="pull-left">
+                    <div class="form-group" >
+                            <label class="col-md-4 control-label" for="eventType">How happy you feel about yourself</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">1(least happy)</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">4</option>
+                                <option value="PRACTICE">5(most happy)</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+
+<div class="pull-left">
+                    <div class="form-group" >
+                            <label class="col-md-4 control-label" for="eventType">How angry you feel about yourself</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">1(least angry)</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">4</option>
+                                <option value="PRACTICE">5(most angry)</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                    <!--h5>How angry do you feel?</h5>
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div-->
+
+<div class="pull-left">
+                     <div class="form-group">
+                            <label class="col-md-4 control-label" for="eventType">How anxious you feel about yourself</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">1(least anxious)</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">4</option>
+                                <option value="PRACTICE">5(most anxious)</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+<div class="pull-left">
+                      <div class="form-group">
+                            <label class="col-md-4 control-label" for="eventType">How satisfied you feel about yourself</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">1(least satisfied)</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">4</option>
+                                <option value="PRACTICE">5(most satisfied)</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                          <div class="form-group">
+                            <label class="col-md-4 control-label" for="eventType">How positive people involved will feel about you</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">1(least positive)</option>
+                                <option value="PRACTICE">2</option>
+                                <option value="PRACTICE">3</option>
+                                <option value="PRACTICE">4</option>
+                                <option value="PRACTICE">5(most positive)</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                          </div>
+
+
+               
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
@@ -647,6 +854,7 @@ body {
               </div>
             </div>
           </div>
+
 
 
 
