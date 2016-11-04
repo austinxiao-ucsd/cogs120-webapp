@@ -148,7 +148,7 @@ body {
 
 
 
-              <!-- Modal -->
+              <!-- Modal pop up when the add button is hitten-->
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -201,14 +201,12 @@ body {
 
                           <!-- Select Basic -->
                           <div class="form-group">
-                            <label class="col-md-4 control-label" for="eventType">How many people involved other than youself?</label>
+                            <label class="col-md-4 control-label" for="eventType">Any people involved other than youself?</label>
                             <div class="col-md-4">
                               <select id="eventType" name="eventType" class="form-control">
-                                <option value="TOURNAMENT">0</option>
-                                <option value="PRACTICE">1</option>
-                                <option value="PRACTICE">2</option>
-                                <option value="PRACTICE">3</option>
-                                <option value="PRACTICE">more than 3</option>
+                                <option value="TOURNAMENT">No</option>
+                                <option value="PRACTICE">Yes</option>
+                               
                                 
                               </select>
                             </div>
@@ -275,6 +273,7 @@ body {
             </div>
              <div class="checkbox pull-right">
               <span class="label label-primary pull-right">Pending</span>
+              
               <label>
                 <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>        
               </label>
@@ -313,78 +312,126 @@ body {
 
         </div>
 
+ </div>
+  </div>
+
+      
 
 
-      </div>
-
-
-      <!-- Modal
-        Pop-Up when the edit page is clicked.
-        ===============================================================================================================================-->        
-        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-
-
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <!-- Put Image the user clicks on here -->
-                <label for="message-text" class="control-label">My Task</label>
-              </div>
-
-
-              <!-- Modal Body -->
-              <!-- ===================== -->
-
-              <!-- Display title, description and time. -->
-              <div class="modal-body">
-                <div class="form-group">
-                  <h1>
-                    <label for="message-text" class="control-label">Task: Gym Time</label>
-                  </h1>
-                  <label for="message-text" class="control-label"> Description: Time to go to the gym.</label>         
-                </div>
-
-
-
-                <div class = "form-group">
-
-                  <font color="black">
-                    <label for="message-text" class="control-label">Expected Days Left: </label>
-                    <div>
-                      <label for="message-text" class="control-label">15 Days. Due at 11/15/2016 at 3 pm </label>
+      <!-- Modal pop up when the edit button is hitten-->
+              <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel">Gym Workout</h4>
                     </div>
-                    <strong>
-                      <span id="time"></span>
-                    </strong>           
-                  </font> 
-                </div>
+                    <div class="modal-body">
+                      <form class="form-horizontal">
+                        
+                        <fieldset>
 
-                <div>
-                  <h1>
-                    <label for="message-text" class="control-label">Finished on Time? </label>
-                  </h1>
 
+                          <!-- Text input-->
+                          <div class="pull-left">
+                          <div class="form-group">
+                            <label class="col-md-4 control-label" for="textinput">Task Name</label>
+                            <div class="col-md-6">
+                              <input id="textinput" name="textinput" type="text" placeholder="Gym Workout" class="form-control input-md" required="">
+
+                            </div>
+                          </div>
+                        </div>
+
+                          <!-- Appended Input-->
+                          <div class="pull-left">
+                          <div class="form-group" >
+                            <label class="col-md-4 control-label" for="eventDate">Expected Due Date</label>
+                            <div class="col-md-4">
+                              <div class="input-group">
+                                <input id="eventDate" name="eventDate" class="form-control" placeholder="10/16/16" type="text" required="">
+                                <!--span class="input-group-addon">Calendar</span-->
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                          <!-- Select Basic -->
+                          <div class="pull-left">
+                          <div class="form-group">
+                            <label class="col-md-4 control-label" for="eventType">Type</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">Study</option>
+                                <option value="PRACTICE">Math</option>
+                                <option value="PRACTICE">Pet</option>
+                                <option value="PRACTICE">Sport</option>
+                                <option value="PRACTICE">Love</option>
+                                <option value="PRACTICE">Television</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                          <!-- Select Basic -->
+                          <div class="pull-left">
+                          <div class="form-group" >
+                            <label class="col-md-4 control-label" for="eventType">Any people involved other than youself?</label>
+                            <div class="col-md-4">
+                              <select id="eventType" name="eventType" class="form-control">
+                                <option value="TOURNAMENT">Yes</option>
+                                <option value="PRACTICE">No</option>
+                               
+                                
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                          <!-- Text input-->
+                          <div class="pull-left">
+                          <div class="form-group" >
+                            <label class="col-md-4 control-label" for="venueName">Name of people involved</label>
+                            <div class="col-md-6">
+                              <input id="venueName" name="venueName" type="text" placeholder="Jim" class="form-control input-md">
+
+                            </div>
+                          </div>
+                        </div>
+                          
+                          <!-- Text input-->
+                          <div class="pull-left">
+                          <div class="form-group" >
+                            <label class="col-md-4 control-label" for="venueName">Descriptions</label>
+                            <div class="col-md-6">
+                              <input id="venueName" name="venueName" type="text" placeholder="At 24 Hour Fitness" class="form-control input-md">
+
+                            </div>
+                          </div>
+                        </div>
+                     
+
+                    </div>
+                    <div class="modal-footer">
+                      <button id="submitButton" name="submitButton" class="btn btn-primary">Save</button>
+                      <button id="cancelButton" name="cancelButton" class="btn btn-danger">Cancel</button>
+                    </div>
+                   </div>
                 </div>
-                <form>
-                  <div class="form-group">
-                    <label for="message-text" class="control-label">Description</label>
-                    <textarea class="form-control" id="message-text"></textarea>              
+              </div>
                   </div>
-                </form>
+                  </div>
+              
+
+        
 
 
-              </div>
-
-              <!-- Modal Footer -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-submit" data-dismiss="modal">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-              </div>
-
-            </div>
-          </div>
-        </div>
+      
+              
+                      
 
 
         <!-- Modal
@@ -412,7 +459,7 @@ body {
                     </h1>   
                   </div>
 
- <div class="pull-left">
+                <div class="pull-left">
                   <div>
                     <h2>
                       <label for="message-text" class="control-label">Reasons </label>
@@ -556,8 +603,8 @@ body {
                             <label class="col-md-4 control-label" for="eventType">How positive people involved will feel about you</label>
                             <div class="col-md-4">
                               <select id="eventType" name="eventType" class="form-control">
-                                <option value="TOURNAMENT">1(least positive)</option>
-                                <option value="PRACTICE">2</option>
+                                <option value="TOURNAMENT">No people involved</option>
+                                <option value="PRACTICE">1(least positive)</option>
                                 <option value="PRACTICE">3</option>
                                 <option value="PRACTICE">4</option>
                                 <option value="PRACTICE">5(most positive)</option>
@@ -834,7 +881,8 @@ body {
                             <label class="col-md-4 control-label" for="eventType">How positive people involved will feel about you</label>
                             <div class="col-md-4">
                               <select id="eventType" name="eventType" class="form-control">
-                                <option value="TOURNAMENT">1(least positive)</option>
+                                <option value="TOURNAMENT">No people involved</option>
+                                <option value="PRACTICE">1(least positive)</option>
                                 <option value="PRACTICE">2</option>
                                 <option value="PRACTICE">3</option>
                                 <option value="PRACTICE">4</option>
