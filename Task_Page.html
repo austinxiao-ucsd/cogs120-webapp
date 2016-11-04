@@ -18,11 +18,11 @@
           $(document).ready(function() { 
                $.getJSON('result.json', function(jd) {
                   $("#task1Name_ID").text(jd.task1);
-                  $("#task1Info_ID").text(jd.des1);
+                  $("#task1Infor_ID").text(jd.des1);
                   $("#task1Due_ID").text(jd.dueTime1);
-                  $("#task2Name_ID").text(jd.task2);
-                  $("#task2Info_ID").text(jd.des2);
-                  $("#task2Due_ID").text(jd.dueTime2);
+            //      task1 = jd.task1; 
+             //     des1 = jd.des1;
+              //    dueTime1 = jd.dueTime1; 
               });
           });
       </script>
@@ -241,8 +241,17 @@ body {
            
 
             <div class="pull-left form-control-inline">
-              <!-- the content has been modified at the start of the website,in the jQuery from json file-->
-              <h4 class="list-group-item-heading" id="task1Name_ID"></h4>
+            
+              <h4 class="list-group-item-heading" id="task1Name_ID">
+              <script type = "text/javascript" language = "javascript">
+                //$("#task1Name_ID").text(task1);
+                $(document).ready(function() {
+                  
+                });
+
+              </script>
+            </h4>
+
               <p class="list-group-item-text" id = "task1Info_ID"></p>
               <p class="list-group-item-text" id = "task1Due_ID"></p>
             </div>
@@ -262,9 +271,9 @@ body {
           <a href="#" class="list-group-item">
 
             <div class="pull-left">
-              <h4 class="list-group-item-heading" id = "task2Name_ID"></h4>
-              <p class="list-group-item-text" id = "task2Info_ID"></p>
-              <p class="list-group-item-text" id = "task2Due_ID"></p>
+              <h4 class="list-group-item-heading">Math 109 Homework</h4>
+              <p class="list-group-item-text">- Review Induction. HW has no extension. </p> 
+              <p class="list-group-item-text">- Expected Due Date: 10/10/16 </p>              
             </div>
 
             <div class="checkbox pull-right">
@@ -884,6 +893,24 @@ body {
               </div>
             </div>
           </div>
+
+
+
+
+          <div>
+            <p>Click to See the Upcoming Task:</p>
+    
+            <div id = "stage" style = "background-color:#cc0;">
+                STAGE
+            </div>
+    
+            <input type = "button" id = "driver" value = "Load Data" />
+            
+        </div>
+
+
+
+
 
           <!-- jQuery Version 1.11.1 -->
           <script src="js/jquery.js"></script>
