@@ -28,12 +28,12 @@
             padding-top: 80px;
         }
         .group .subgroup {
-            width: 750px;
-            height: 450px;
-            padding: 80px;
+            width: 800px;
+            height: 500px;
+            padding-top: 70px;
         }
 
-        #GroupA {
+        #GroupA, #GroupC {
             height: 700px;
         }
         .fixed {
@@ -115,8 +115,9 @@
 
       google.charts.setOnLoadCallback(drawBarChart);
 
-      google.charts.setOnLoadCallback(drawBasic);
+      google.charts.setOnLoadCallback(drawEmotionChart);
 
+      google.charts.setOnLoadCallback(drawAreaChart);
 
       function drawPieChart() {
         var data = new google.visualization.arrayToDataTable([
@@ -166,32 +167,46 @@
         Bar_chart.draw(data, options);
       }
 
-function drawBasic() {
-      
-      var data = google.visualization.arrayToDataTable([
-        ['Emotion', 'Completed Task Ratio', 'Incompleted Task Ratio'],
-        ['Five Star', 95, 5],
-        ['Four Star', 80, 20],
-        ['Three Star', 69, 31],
-        ['Two Star', 35, 65],
-        ['One Star', 8, 92]
-      ]);
+    function drawEmotionChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Whether Completed', '# of 1 Star', '# of 2 Star', '# of 3 Star', '# of 4 Star', '# of 5 Star'],
+          ['Completed', 1, 1, 2, 6, 12],
+          ['Incompleted', 3, 9, 5, 2, 0]
+        ]);
 
-      var options = {
-        title: 'Emotion Rating for Different Task Result',
-        chartArea: {width: '50%'},
-        hAxis: {
-          title: 'Ratio',
-          minValue: 0
-        },
-        vAxis: {
-          title: 'Emotion Rating'
-        }
-      };
+        var options = {
+          chart: {
+            title: 'Emotion Rating for Different Task Result',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
 
-      var Basic_chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-      Basic_chart.draw(data, options);
-    }
+        var Basic_chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+        Basic_chart.draw(data, options);
+      }
+
+     function drawAreaChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Catagory',  'Completed', 'Incompleted'],
+          ['Study',                   11,        2],
+          ['Health',                  7,         0],
+          ['Work',                    7,         3],
+          ['Social',                  2,         1],
+          ['Entertainment',           2,         0]
+        ]);
+
+        var options = {
+          title: 'Completed vs Incompleted in Different Task Catagories',
+          vAxis: {title: 'Number of Tasks'},
+          isStacked: true
+        };
+
+        var Area_chart = new google.visualization.SteppedAreaChart(document.getElementById('areachart'));
+
+        Area_chart.draw(data, options);
+      }
+
     </script>
 
 </head>
@@ -244,8 +259,8 @@ function drawBasic() {
                     <li>
                         <a href="#GroupB">Task Catagory Analytics</a>
                         <ul class="nav nav-stacked">
-                            <li><a href="#GroupBSub1">Pie Chart</a></li>
-                            <li><a href="#GroupBSub2">Bar Chart</a></li>
+                            <li><a href="#GroupBSub1">Donut Chart</a></li>
+                            <li><a href="#GroupBSub2">Area Chart</a></li>
                         </ul>
                     </li>
                     <li>
@@ -259,26 +274,25 @@ function drawBasic() {
 
                 <section id="GroupA" class="group">
                     <h3>Reason Analytics</h3>
-                    <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+                    <div id="top_x_div" style="width: 99%; height: 99%;"></div>
                 </section>
 
                 <section id="GroupB" class="group">
                     <h3>Task Catagory Analytics</h3>
                     <div id="GroupBSub1" class="subgroup">
-                        <h4>Pie Chart</h4>
+                        <h4>Donut Chart</h4>
                         <div class="container"></div>
-                        <div id="donutchart" style="width: 700px; height: 400px;"></div>
+                        <div id="donutchart" style="width: 99%; height: 99%;"></div>
                     </div>
                     <div id="GroupBSub2" class="subgroup">
-                        <h4>Bar Chart</h4>
-                        <!--<div class="container"></div>
-                        <div id="donutchart" style="width: 700px; height: 400px;"></div>-->
+                        <h4>Area Chart</h4>
+                        <div id="areachart" style="width: 99%; height: 99%;"></div>
                     </div>
                 </section>
 
                 <section id="GroupC" class="group">
                     <h3>Emotion Anlytics</h3>
-                    <div id="chart_div" style="width: 700px; height: 400px;"></div>
+                    <div id="chart_div" style="width: 99%; height: 99%;"></div>
                 </section>    
             </div>
         </div>

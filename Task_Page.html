@@ -8,32 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    
 
     <!--title>The jQuery Example</title-->
       <script type = "text/javascript" 
          src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     
-      var name1;
-      var place1;
-      var time1;
       <script type = "text/javascript" language = "javascript">
-          $("head").data("test", 1);
-         $(document).ready(function() {
-      
-            $("#driver").click(function(event){
+          $(document).ready(function() { 
                $.getJSON('result.json', function(jd) {
-                  //var element = $('#stage').html('<p> Task Name: ' + jd.name + '</p>');
-                  //$("head").data("test", 1);
-                  //$('#stage').append('<p> Place : ' + jd.place+ '</p>');
-                  //$('#stage').append('<p> Time: ' + jd.time+ '</p>');
-                  name1 = jd.name;
-                  place1 = jd.place;
-                  time1 = jd.time; 
+                  $("#task1Name_ID").text(jd.task1);
+                  $("#task1Infor_ID").text(jd.des1);
+                  $("#task1Due_ID").text(jd.dueTime1);
+            //      task1 = jd.task1; 
+             //     des1 = jd.des1;
+              //    dueTime1 = jd.dueTime1; 
               });
-            });
-        
-         });
+          });
       </script>
 
     <title>Task Page</title>
@@ -251,25 +242,18 @@ body {
 
             <div class="pull-left form-control-inline">
             
-              <h4 class="list-group-item-heading">Gym Workout</h4>
-              <h4 class="list-group-item-heading">element.name</h4>
+              <h4 class="list-group-item-heading" id="task1Name_ID">
               <script type = "text/javascript" language = "javascript">
+                //$("#task1Name_ID").text(task1);
                 $(document).ready(function() {
                   
-                    console.log($("head").data("test"));
-                    // $("#driver").click(function(event){
-                    //    $.getJSON('result.json', function(jd) {
-                    //       var element = $('#stage').html('<p> Task Name: ' + jd.name + '</p>');
-                    //       $("head").data("test", 1);
-                    //       $('#stage').append('<p> Place : ' + jd.place+ '</p>');
-                    //       $('#stage').append('<p> Time: ' + jd.time+ '</p>');
-                    //    });
-                    });
+                });
 
               </script>
+            </h4>
 
-              <p class="list-group-item-text">- Meet with Jim at 24 Hour Fitness Tomorrow.</p> 
-              <p class="list-group-item-text">- Expected Due Date: 10/16/16 </p>      
+              <p class="list-group-item-text" id = "task1Info_ID"></p>
+              <p class="list-group-item-text" id = "task1Due_ID"></p>
             </div>
              <div class="checkbox pull-right">
               <span class="label label-primary pull-right">Pending</span>
