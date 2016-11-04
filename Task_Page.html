@@ -19,21 +19,18 @@
     
       <script type = "text/javascript" language = "javascript">
           $("head").data("test", 1);
-         $(document).ready(function() {
-      
-            $("#driver").click(function(event){
+          $(document).ready(function() { 
                $.getJSON('result.json', function(jd) {
                   //var element = $('#stage').html('<p> Task Name: ' + jd.name + '</p>');
                   //$("head").data("test", 1);
                   //$('#stage').append('<p> Place : ' + jd.place+ '</p>');
                   //$('#stage').append('<p> Time: ' + jd.time+ '</p>');
                   task1 = jd.task1;
+                  
                   des1 = jd.des1;
                   dueTime1 = jd.dueTime1; 
               });
-            });
-        
-         });
+          });
       </script>
 
     <title>Task Page</title>
@@ -253,7 +250,7 @@ body {
 
             <div class="pull-left form-control-inline">
             
-              <h4 class="list-group-item-heading">task1</h4>
+              <h4 class="list-group-item-heading">{$task1}</h4>
               <script type = "text/javascript" language = "javascript">
                 $(document).ready(function() {
                   
@@ -269,7 +266,9 @@ body {
 
               </script>
 
-              <p class="list-group-item-text">des1</p> 
+              <p class="list-group-item-text">
+                
+              </p> 
               <p class="list-group-item-text">dueTime1</p>      
             </div>
              <div class="checkbox pull-right">
