@@ -1,17 +1,8 @@
 {
-"data":[
-    {"Task":"Study", "Hours": "11"},
-    {"Task":"Social", "Hours": "2"},
-    {"Task":"Work", "Hours": "7"},
-    {"Task":"Entertainment", "Hours": "2"},
-    {"Task":"Health", "Hours": "7"},
-]
 "task1": "Gym Workout",
 "des1": "- Meet with Jim at 24 Hour Fitness Tomorrow",
 "dueTime1": "- Expected Due Date: 10/15/16",
 "task2": "Math 109 Homework",
 "des2": "- Review Induction. HW has no extension",
 "dueTime2": "- Expected Due Date: 10/12/16"
-
-
 }
