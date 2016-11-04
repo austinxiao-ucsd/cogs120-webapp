@@ -250,8 +250,9 @@ body {
 
             <div class="pull-left form-control-inline">
             
-              <h4 class="list-group-item-heading">{$task1}</h4>
+              <h4 class="list-group-item-heading">
               <script type = "text/javascript" language = "javascript">
+                task1.get();
                 $(document).ready(function() {
                   
                     console.log($("head").data("test"));
@@ -265,6 +266,7 @@ body {
                     });
 
               </script>
+            </h4>
 
               <p class="list-group-item-text">
                 
