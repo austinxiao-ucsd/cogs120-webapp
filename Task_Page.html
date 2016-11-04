@@ -18,10 +18,10 @@
           $(document).ready(function() { 
                $.getJSON('result.json', function(jd) {
                   $("#task1Name_ID").text(jd.task1);
-                  $("#task1Info_ID").text(jd.des1);
+                  $("#task1Infor_ID").text(jd.des1);
                   $("#task1Due_ID").text(jd.dueTime1);
                   $("#task2Name_ID").text(jd.task2);
-                  $("#task2Info_ID").text(jd.des2);
+                  $("#task2Infor_ID").text(jd.des2);
                   $("#task2Due_ID").text(jd.dueTime2);
               });
           });
@@ -241,16 +241,16 @@ body {
            
 
             <div class="pull-left form-control-inline">
-              <!-- the content has been modified at the start of the website,in the jQuery from json file-->
+            
               <h4 class="list-group-item-heading" id="task1Name_ID"></h4>
-              <p class="list-group-item-text" id = "task1Info_ID"></p>
+              <p class="list-group-item-text" id = "task1Infor_ID"></p>
               <p class="list-group-item-text" id = "task1Due_ID"></p>
             </div>
              <div class="checkbox pull-right">
               <span class="label label-primary pull-right">Pending</span>
               
               <label>
-                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>        
+                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>
               </label>
             </div>
 
@@ -263,7 +263,7 @@ body {
 
             <div class="pull-left">
               <h4 class="list-group-item-heading" id = "task2Name_ID"></h4>
-              <p class="list-group-item-text" id = "task2Info_ID"></p>
+              <p class="list-group-item-text" id = "task2Infor_ID"></p> 
               <p class="list-group-item-text" id = "task2Due_ID"></p>
             </div>
 
@@ -884,6 +884,14 @@ body {
               </div>
             </div>
           </div>
+
+
+
+
+          
+
+
+
 
           <!-- jQuery Version 1.11.1 -->
           <script src="js/jquery.js"></script>
