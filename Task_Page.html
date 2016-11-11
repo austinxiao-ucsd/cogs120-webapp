@@ -50,7 +50,6 @@
     <!-- Using the onclick function -->
     <script>
         function saveBtnClicked() {
-        	console.log("entered")
             var nameVal = document.getElementById("textinputfield").value;
             var dateVal = document.getElementById("eventDate").value;
             console.log(dateVal);
@@ -98,9 +97,6 @@
     	    margin-top: -20px;
     	    font-size: 15px;
         }
-
-
-
 
         div.fill-screen {
           position: fixed;
@@ -204,7 +200,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel"> Create Task </h4>
+                    <h4 class="modal-title" id="myModalLabel"> Task Details </h4>
                   </div>
 
                   <div class="modal-body">
@@ -372,7 +368,7 @@
                   <!--span class="label label-primary pull-right">Pending</span-->
 
                   <label>
-                    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editModal">Edit</button>
+                    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Edit</button>
                   </label>
                 </div>
 
@@ -430,12 +426,11 @@
           </div>
           <div class="modal-body">
             <form class="form-horizontal">
-
               <fieldset>
 
 
                 <!-- Text input-->
-                <div class="pull-left">
+                
                   <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Task Name</label>
                     <div class="col-md-6">
@@ -443,171 +438,40 @@
 
                     </div>
                   </div>
-                </div>
+              
 
-                <!-- Appended Input-->
-                <div class="pull-left">
-                  <div class="form-group" >
-                    <label class="col-md-4 control-label" for="eventDate">Expected Due Date</label>
-                    <div class="col-md-4">
-                      <div class="input-group">
-                        <input id="eventDate" name="eventDate" class="form-control" placeholder="10/16/16" type="text" required="">
-                        <!--span class="input-group-addon">Calendar</span-->
+                  <!-- Appended Input-->
+                  
+                    <div class="form-group" >
+                      <label class="col-md-4 control-label" for="eventDate" style = "margin-top: 10px">Expected Due Date</label>
+                      <div class="col-md-4">
+                        <div class="input-group">
+                          <input id="eventDate" name="eventDate" class="form-control" style = "margin-top: 10px" placeholder="10/16/16" type="text" required="">
+                          <!--span class="input-group-addon">Calendar</span-->
+                        </div>
+
                       </div>
-
                     </div>
-                  </div>
-                </div>
+                
 
-                <!-- Select Basic -->
-                <div class="pull-left">
-                  <div class="form-group">
-                    <label class="col-md-4 control-label" for="eventType">Type</label>
-                    <div class="col-md-4">
-                      <select id="eventType" name="eventType" class="form-control">
-                        <option value="TOURNAMENT">Study</option>
-                        <option value="PRACTICE">Math</option>
-                        <option value="PRACTICE">Pet</option>
-                        <option value="PRACTICE">Sport</option>
-                        <option value="PRACTICE">Love</option>
-                        <option value="PRACTICE">Television</option>
-                      </select>
+                    <!-- Select Basic -->
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label class="col-md-6 control-label" for="eventType" style = "margin-top: 10px"> Task Type </label>
+                        <div class="col-md-6 pull-left">
+                          <select id="eventType" name="eventType" class="form-control" style = "margin-top: 10px">
+                            <option value="TOURNAMENT">Study</option>
+                            <option value="PRACTICE">Math</option>
+                            <option value="PRACTICE">Pet</option>
+                            <option value="PRACTICE">Sport</option>
+                            <option value="PRACTICE">Love</option>
+                            <option value="PRACTICE">Television</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
 
-                <!-- Select Basic -->
-                <div class="pull-left">
-                  <div class="form-group" >
-                    <label class="col-md-4 control-label" for="eventType">Any people involved other than youself?</label>
-                    <div class="col-md-4">
-                      <select id="eventType" name="eventType" class="form-control">
-                        <option value="TOURNAMENT">Yes</option>
-                        <option value="PRACTICE">No</option>
-
-
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Text input-->
-                <div class="pull-left">
-                  <div class="form-group" >
-                    <label class="col-md-4 control-label" for="venueName">Descriptions</label>
-                    <div class="col-md-6">
-                      <input id="venueName" name="venueName" type="text" placeholder="At 24 Hour Fitness" class="form-control input-md">
-
-                    </div>
-                  </div>
-                </div>
-
-
-
-                <!-- Text input-->
-                <div class="pull-left">
-                  <div class="form-group" >
-                    <label class="col-md-4 control-label" for="venueName">Name of people involved</label>
-                    <div class="col-md-6">
-                      <input id="venueName" name="venueName" type="text" placeholder="Jim" class="form-control input-md">
-
-                    </div>
-                  </div>
-                </div>
-
-
-
-
-                                        <!-- Motivation. -->
-                        <div class="form-group" >
-                              <label class="col-md-4 control-label pull-left" for="eventType" style = "margin-top: 10px">How motivated are you to complete this task?</label>
-                              <div class="col-md-6">
-                                <select id="eventType" name="eventType" class="form-control" style = "margin-top: 10px">
-                                  <option value="TOURNAMENT">1(least motivated)</option>
-                                  <option value="PRACTICE">2</option>
-                                  <option value="PRACTICE">3</option>
-                                  <option value="PRACTICE">4</option>
-                                  <option value="PRACTICE">5(most motivated)</option>
-
-                                </select>
-                              </div>
-                        </div>
-
-
-                        <!-- Check all other people involved in this task,-->
-                        <!--people involved-->
-                        <div class="form-group">
-                          
-                          <label class="col-md-4 control-label pull-left" for="venueName">Name of people involved</label>
-
-                          <div class="col-md-4">
-                            <input id="ppl_input" name="pplinput" type="text" placeholder="add new people" class="form-control input-md col-md-6" required="" >
-
-                          </div>
-
-                          <div class="col-md-4">
-                            <button onclick="myFunctionppl()">
-                              <a class="btn icon-btn btn-primary">
-                                <span class="glyphicon btn-glyphicon glyphicon-plus img-circle">
-                                </span>
-                                  Add people
-                              </a>
-                            </button>
-                        </div>
-
-                        <!-- Select Basic -->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label pyll-left" for="eventType">Any people involved other than youself?</label>
-                          <div class="col-md-4">
-                            <select id="eventType" name="eventType" class="form-control">
-                              <option value="TOURNAMENT">No</option>
-                              <option value="PRACTICE">Yes</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group pull-left">
-                          <label class="col-md-4 control-label pull-left" for="venueName">Name of people involved</label>
-                          <div class="col-md-6">
-                            <input id="venueName" name="venueName" type="text" placeholder="" class="form-control input-md">
-
-                          </div>
-                        </div>
-
-
-
-                  <div class="form-group">
-                          <label class="col-md-4 control-label" for="venueName">Give yourself a reward if you finish this task before expected due time!</label>
-                          <div class="col-md-6">
-                            <input id="venueName" name="venueName" type="text" placeholder="" class="form-control input-md">
-
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="venueName">Give yourself a punishment if you fail to finish this task before expected due time!</label>
-                          <div class="col-md-6">
-                            <input id="venueName" name="venueName" type="text" placeholder="" class="form-control input-md">
-
-                          </div>
-                        </div>
-
-                    
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="venueName">Descriptions</label>
-                          <div class="col-md-6">
-                            <input id="venueName" name="venueName" type="text" placeholder="" class="form-control input-md">
-
-                          </div>
-                        </div>
-
-                  </div>
-
-
-          <!-- end of modal body-->
+              </fieldset>
           </div>
           <div class="modal-footer">
             <button id="submitButton" name="submitButton" class="btn btn-primary" data-dismiss="modal">Save</button>
