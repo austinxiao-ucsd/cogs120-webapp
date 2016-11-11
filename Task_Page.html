@@ -52,6 +52,12 @@
         function saveBtnClicked() {
             var nameVal = document.getElementById("textinputfield").value;
             var dateVal = document.getElementById("eventDate").value;
+            var task = document.getElementById('textinputfield2');
+
+            console.log(task.value);
+            document.getElementById('task1Name_ID').setAttribute("value", task)
+            console.log("----");
+
             console.log(dateVal);
             var dateToDisplay = dateVal.substring(0, 2) + '/'
                 + dateVal.substring(3, 5) + '/'
@@ -71,6 +77,7 @@
             + '</label>'+ '</div>'+ '<div class="clearfix"></div>';
                 
             newItem.className='list-group-item';
+            element.removeChild(element.lastChild);
             element.appendChild(newItem);
 
             element.style.color = "#ff0000";
@@ -185,7 +192,6 @@
     <!-- Title bar for adding tasks -->
     <div class = "container">
       <div class = "list-group">
-
         <!-- Task panel -->
         <div class="panel panel-default">
 
@@ -208,8 +214,8 @@
                     <h4 class="modal-title" id="myModalLabel"> Task Details </h4>
                   </div>
 
-                  <div class="modal-body">
-                    <form class="form-horizontal">
+                  <div class="modal-body"> 
+                    <form class="form-horizontal" novalidate>
                       <fieldset>
                         <!-- Text input-->
                         <div class="form-group">
@@ -271,7 +277,7 @@
                           <label class="col-md-4 control-label" for="venueName">Name of people involved</label>
 
                           <div class="col-md-4">
-                            <input id="ppl_input" name="pplinput" type="text" placeholder="add new people" class="form-control input-md col-md-6" required="" >
+                            <input id="ppl_input" name="pplinput" type="text" placeholder="add new people" class="form-control input-md col-md-6" required="" value="">
 
                           </div>
 
@@ -364,7 +370,7 @@
 
                 <!-- Gym Workout Panel -->
                 <div class="pull-left form-control-inline">
-                  <h4 class="list-group-item-heading" id="task1Name_ID"></h4>
+                  <h4 class="f" id="task1Name_ID"></h4>
                   <p class="list-group-item-text" id = "task1Infor_ID"></p>
                   <p class="list-group-item-text" id = "task1Due_ID"></p>
                 </div>
@@ -373,7 +379,7 @@
                   <!--span class="label label-primary pull-right">Pending</span-->
 
                   <label>
-                    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Edit</button>
+                    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#changeModal">Edit</button>
                   </label>
                 </div>
 
@@ -419,74 +425,57 @@
               </div>
 			  </div>
 
-    <!-- Modal pop up when the edit button is hitten-->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modcompleteBtnal-title" id="myModalLabel">Gym Workout</h4>
-          </div>
-          <div class="modal-body">
-            <form class="form-horizontal">
-              <fieldset>
+            <!-- Modal pop up when the edit button is hitten-->
+            <!-- Modal pop up when the add button is hitten-->
+            <div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="changeModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
 
 
-                <!-- Text input-->
-                
-                  <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Task Name</label>
-                    <div class="col-md-6">
-                      <input id="textinput" name="textinput" type="text" placeholder="Gym Workout" class="form-control input-md" required="">
+                  <div class="modal-body">
+                    <form class="form-horizontal">
+                      <fieldset>
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-6 control-label" for="textinput">Task Name</label>
+                          <div class="col-md-6">
+                            <input id="textinputfield2" name="textinput" type="text" placeholder="" class="form-control input-md" required="" value="">
 
-                    </div>
+                      </div>
+
+
+                      <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-6 control-label" for="venueName">Descriptions</label>
+                          <div class="col-md-6">
+                            <input id="task-description2" name="venueName" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="input-group">
+                              <label class="col-md-4 control-label" for="venueName">Date</la
+                              <div class="col-md-8">
+                                <input id="eventDate2" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
+                              </div>
+                              <!--span class="input-group-addon">Calendar</span-->
+                            </div>
+
+                        </div>
                   </div>
-              
 
-                  <!-- Appended Input-->
-                  
-                    <div class="form-group" >
-                      <label class="col-md-4 control-label" for="eventDate" style = "margin-top: 10px">Expected Due Date</label>
-                      <div class="col-md-4">
-                        <div class="input-group">
-                          <input id="eventDate" name="eventDate" class="form-control" style = "margin-top: 10px" placeholder="10/16/16" type="text" required="">
-                          <!--span class="input-group-addon">Calendar</span-->
-                        </div>
-
-                      </div>
-                    </div>
                 
 
-                    <!-- Select Basic -->
-                    <div class="form-group">
-                      <div class="form-group">
-                        <label class="col-md-6 control-label" for="eventType" style = "margin-top: 10px"> Task Type </label>
-                        <div class="col-md-6 pull-left">
-                          <select id="eventType" name="eventType" class="form-control" style = "margin-top: 10px">
-                            <option value="TOURNAMENT">Study</option>
-                            <option value="PRACTICE">Math</option>
-                            <option value="PRACTICE">Pet</option>
-                            <option value="PRACTICE">Sport</option>
-                            <option value="PRACTICE">Love</option>
-                            <option value="PRACTICE">Television</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-              </fieldset>
+                  <div class="modal-footer">
+                    <button onclick="saveBtnClicked()" id="submitButton" name="submitButton" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    <button id="cancelButton" name="cancelButton" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-footer">
-            <button id="submitButton" name="submitButton" class="btn btn-primary" data-dismiss="modal">Save</button>
-            <button id="cancelButton" name="cancelButton" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div>
 
 
 
