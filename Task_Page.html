@@ -75,6 +75,10 @@
 
             element.style.color = "#ff0000";
         }
+        function completedBtnClicked() {
+          var element = document.getElementById("complete-task-panel");
+          element.appendChild("Added to analytics.");
+        }
     </script>
 
     <!-- Custom CSS -->
@@ -388,7 +392,7 @@
 					      <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
 				      </div>
 
-			    	  <div class="panel-body">
+			    	  <div class="panel-body" id = "complete-task-panel">
                 <!-- Panel content -->
 
                 <a href="#" class="list-group-item">
@@ -422,7 +426,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="myModalLabel">Gym Workout</h4>
+            <h4 class="modcompleteBtnal-title" id="myModalLabel">Gym Workout</h4>
           </div>
           <div class="modal-body">
             <form class="form-horizontal">
@@ -1065,7 +1069,7 @@
 
           <!-- Modal Footer -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-submit" data-dismiss="modal">
+            <button onclick = "completedBtnClicked()" type="button" class="btn btn-submit" data-dismiss="modal">
               Confirm
             </button>
             <button type="button" class="btn btn-default" data-dismiss="modal">
