@@ -137,13 +137,15 @@
           ['Study',     11],
           ['Social',      2],
           ['Work',  7],
-          ['Entertainment', 2],
+          ['Fun', 2],
           ['Health',    7]
         ]);
 
         var options = {
           title: 'Task Catagory',
           pieHole: 0.4,
+          titleTextStyle: {fontSize: 13},
+          legend: {textStyle:{fontSize:10}, position:'right'}
         };
 
         var Pie_chart = new google.visualization.PieChart(document.getElementById('donutchart'));
@@ -155,13 +157,14 @@
           ['Tags of Reasons', 'Frequency'],
           ["Youtube", 21],
           ["Games", 14],
-          ["Facebook", 12],
+          ["FB", 12],
           ["John", 6],
           ['Other', 3]
         ]);
 
         var options = {
           title: 'Reasons for procrastination',
+          titleTextStyle: {fontSize: 13},
           legend: { position: 'none' },
           chart: { title: 'Reasons for procrastination',
                    subtitle: 'Frequency of being the reason' },
@@ -180,16 +183,18 @@
 
     function drawEmotionChart1() {
         var data = google.visualization.arrayToDataTable([
-          ['Degrees of rating', 'Completed', 'Incompleted'],
-          ['5 degree', 0, 6],
-          ['4 degrees', 2, 9],
-          ['3 degrees', 7, 6],
-          ['2 degrees', 7, 1],
-          ['1 degrees', 10, 0]
+          ['Degrees of rating', 'On TIme', 'Delayed'],
+          ['5', 9, 0],
+          ['4', 9, 2],
+          ['3', 6, 7],
+          ['2', 1, 7],
+          ['1', 0, 6]
         ]);
 
         var options = {
             title: 'Degrees of happy for tasks rated',
+            titleTextStyle: {fontSize: 13},
+            vAxis: {title: 'Degrees'},
             legend: {position: 'bottom'}
         };
 
@@ -200,16 +205,18 @@
 
     function drawEmotionChart2() {
         var data = google.visualization.arrayToDataTable([
-          ['Degrees of rating', 'Completed', 'Incompleted'],
-          ['5 degree', 0, 6],
-          ['4 degrees', 2, 9],
-          ['3 degrees', 7, 6],
-          ['2 degrees', 7, 1],
-          ['1 degrees', 10, 0]
+          ['Degrees of rating', 'On TIme', 'Delayed'],
+          ['5', 0, 7],
+          ['4', 2, 9],
+          ['3', 7, 6],
+          ['2', 7, 1],
+          ['1', 8, 0]
         ]);
 
         var options = {
             title: 'Degrees of anxious for tasks rated',
+            titleTextStyle: {fontSize: 13},
+            vAxis: {title: 'Degrees'},
             legend: {position: 'bottom'}
         };
 
@@ -220,16 +227,18 @@
 
       function drawEmotionChart3() {
         var data = google.visualization.arrayToDataTable([
-          ['Degrees of rating', 'Completed', 'Incompleted'],
-          ['5 degree', 0, 6],
-          ['4 degrees', 2, 9],
-          ['3 degrees', 7, 6],
-          ['2 degrees', 7, 1],
-          ['1 degrees', 10, 0]
+          ['Degrees of rating', 'On Time', 'Delayed'],
+          ['5', 0, 6],
+          ['4', 2, 9],
+          ['3', 7, 6],
+          ['2', 7, 1],
+          ['1', 10, 0]
         ]);
 
         var options = {
             title: 'Degrees of upset for tasks rated',
+            titleTextStyle: {fontSize: 13},
+            vAxis: {title: 'Degrees'},
             legend: {position: 'bottom'}
         };
 
@@ -240,16 +249,18 @@
 
       function drawEmotionChart4() {
         var data = google.visualization.arrayToDataTable([
-          ['Degrees of rating', 'Completed', 'Incompleted'],
-          ['5 degree', 0, 6],
-          ['4 degrees', 2, 9],
-          ['3 degrees', 7, 6],
-          ['2 degrees', 7, 1],
-          ['1 degrees', 10, 0]
+          ['Degrees of rating', 'On Time', 'Delayed'],
+          ['5', 6, 0],
+          ['4', 9, 2],
+          ['3', 7, 6],
+          ['2', 2, 7],
+          ['1', 0, 10]
         ]);
 
         var options = {
             title: 'Degrees of satisfication for tasks rated',
+            titleTextStyle: {fontSize: 13},
+            vAxis: {title: 'Degrees'},
             legend: {position: 'bottom'}
         };
 
@@ -260,16 +271,18 @@
 
       function drawEmotionChart5() {
         var data = google.visualization.arrayToDataTable([
-          ['Degrees of rating', 'Completed', 'Incompleted'],
-          ['5 degree', 0, 6],
-          ['4 degrees', 2, 9],
-          ['3 degrees', 7, 6],
-          ['2 degrees', 7, 1],
-          ['1 degrees', 10, 0]
+          ['Degrees of rating', 'On Time', 'Delayed'],
+          ['5', 8, 0],
+          ['4', 9, 2],
+          ['3', 7, 6],
+          ['2', 1, 7],
+          ['1', 0, 9]
         ]);
 
         var options = {
             title: 'Degrees of other\'s view for tasks rated',
+            titleTextStyle: {fontSize: 13},
+            vAxis: {title: 'Degrees'},
             legend: {position: 'bottom'}
         };
 
@@ -280,7 +293,7 @@
 
      function drawAreaChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Catagory',  'Completed', 'Incompleted'],
+          ['Catagory',  'On Time', 'Delayed'],
           ['Study',                   11,        2],
           ['Health',                  7,         0],
           ['Work',                    7,         3],
@@ -289,9 +302,10 @@
         ]);
 
         var options = {
-          title: 'Completed vs Incompleted in Different Task Catagories',
+          title: 'On Time vs Delayed in Different Task Catagories',
           vAxis: {title: 'Number of Tasks'},
           isStacked: true,
+          titleTextStyle: {fontSize: 13},
           legend: {position: 'bottom'}
         };
 
@@ -343,7 +357,7 @@
     <div class="container">
         <!-- Main Content -->
         <div class="row MainContent">
-            <!--Side Nav Bar -->
+            <!--Side Nav Bar
             <nav class="col-sm-3 bs-docs-sidebar">
                 <ul id="sidebar" class="nav nav-stacked fixed">
                     <li>
@@ -368,7 +382,7 @@
                     </li>
                 </ul>
             </nav>
-            
+            -->
             <!--Main Content -->
             <div class="col-sm-9">
 
