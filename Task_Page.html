@@ -49,8 +49,11 @@
 
     <!-- Using the onclick function -->
     <script>
+        var nameVal;
+        var dateToDisplay;
+        var description;
         function saveBtnClicked() {
-            var nameVal = document.getElementById("textinputfield").value;
+            nameVal = document.getElementById("textinputfield").value;
             var dateVal = document.getElementById("eventDate").value;
             var task = document.getElementById('textinputfield2');
 
@@ -59,28 +62,47 @@
             console.log("----");
 
             console.log(dateVal);
-            var dateToDisplay = dateVal.substring(0, 2) + '/'
+            dateToDisplay = dateVal.substring(0, 2) + '/'
                 + dateVal.substring(3, 5) + '/'
                 + dateVal.substring(6, 10);
-            var description = document.getElementById("task-description").value;
+            description = document.getElementById("task-description").value;
             console.log("test description");
             console.log(description);
 
             var element = document.getElementById("first-panel");
             var newItem = document.createElement("a");
-            newItem.innerHTML = '<div class="pull-left form-control-inline"><h4 class="list-group-item-heading">' + nameVal+ '</h4>'
-            +'<p class="list-group-item-text">' + description + '</p>'
-            +'<p class="list-group-item-text">- Expected Due Time: ' 
-            + dateToDisplay +'</p>'+ '</div>'+ '<div class="checkbox pull-right">'
-            //+ '<span class="label label-primary pull-right">Pending</span>'
-            + '<label>'+ '<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Edit</button>'
-            + '</label>'+ '</div>'+ '<div class="clearfix"></div>';
-                
+            newItem.innerHTML = 
+            '<div class="pull-left form-control-inline"><h4 class="list-group-item-heading" id = "editNameChange">' + nameVal+ '</h4>'
+            + '<p class="list-group-item-text">' + description + '</p>'
+            + '<p class="list-group-item-text" id = "editTimeChange">- Expected Due Time: ' 
+            + dateToDisplay +'</p>'
+            + '<p class="list-group-item-text"> Others: </p>'
+            + '<p class="list-group-item-text"> Rewards/Punishments: </p>'
+            + '</div>'
+            + '<div class="checkbox pull-right">'
+            + '<label>'+ '<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#changeModal">Edit</button>'
+            + '</label>'+ '</div>' + '<div class="clearfix"></div>';
+
             newItem.className='list-group-item';
             element.removeChild(element.lastChild);
             element.appendChild(newItem);
 
             element.style.color = "#ff0000";
+        }
+        function editBtnClicked() {
+          // display the task name
+          nameVal = document.getElementById("textinputfield2").value;
+          var currName = document.getElementById("editNameChange");
+          currName.innerHTML = nameVal;
+
+          // display the chaned time
+          var dateVal = document.getElementById("eventDate2").value;
+          console.log(dateVal);
+          dateToDisplay = dateVal.substring(0, 2) + '/'
+                + dateVal.substring(3, 5) + '/'
+                + dateVal.substring(6, 10);
+          var currTime = document.getElementById("editTimeChange");
+          currTime.innerHTML = dateToDisplay;
         }
         function completedBtnClicked() {
           var element = document.getElementById("complete-task-panel");
@@ -340,11 +362,6 @@
 
                   </div>
 
-
-
-
-
-
                   <div class="modal-footer">
                     <button onclick="saveBtnClicked()" id="submitButton" name="submitButton" class="btn btn-primary" data-dismiss="modal">Save</button>
                     <button id="cancelButton" name="cancelButton" class="btn btn-danger" data-dismiss="modal">Cancel</button>
@@ -373,6 +390,8 @@
                   <h4 class="f" id="task1Name_ID"></h4>
                   <p class="list-group-item-text" id = "task1Infor_ID"></p>
                   <p class="list-group-item-text" id = "task1Due_ID"></p>
+                  <p class="list-group-item-text"> - Others: Eric Kinsley, John Wu</p>
+                  <p class="list-group-item-text"> - Rewards/Punishments: Steamed Chicken Breast Dinner</p>
                 </div>
 
                 <div class="checkbox pull-right">
@@ -399,7 +418,7 @@
 					      <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
 				      </div>
 
-			    	  <div class="panel-body" id = "complete-task-panel">
+			    	  <div class="panel-body">
                 <!-- Panel content -->
 
                 <a href="#" class="list-group-item">
@@ -469,7 +488,7 @@
                 
 
                   <div class="modal-footer">
-                    <button onclick="saveBtnClicked()" id="submitButton" name="submitButton" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    <button onclick="editBtnClicked()" id="submitButton" name="submitButton" class="btn btn-primary" data-dismiss="modal">Save</button>
                     <button id="cancelButton" name="cancelButton" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                   </div>
                 </div>
@@ -975,49 +994,11 @@
                           </select>
                         </div>
                       </div>
-
               </div>
            </div>
           </div>
               
 
-            <!--h5>How anxious do you feel?</h5>
-              <div class="review-block-rate">
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              </div-->
-
-              <!--h5>How satisfied do you feel?</h5>
-                <div class="review-block-rate">
-                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                </button>
-                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                </button>
-                <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                </button>
-                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                </button>
-                <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                </button>
-                </div-->
 
                 <div class="pull-left">
                         <div class="form-group">
