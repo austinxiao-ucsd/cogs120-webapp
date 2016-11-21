@@ -22,11 +22,6 @@
             padding-top: 70px;
         }
 
-        #transbox {
-            height: 50px;
-            background-color: rgba(255,255,255,1);
-        }
-
         .group {
             width: 99%;
             max-width: 800px;
@@ -63,6 +58,7 @@
         /* sidebar */
         .bs-docs-sidebar {
             padding-right: 5px;
+            padding-bottom: 150px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
@@ -421,7 +417,6 @@
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -454,11 +449,11 @@
 
     <!-- main body -->
     <div class="container">
-        <h1> Your Personal Analytics </h1>
         <!-- Main Content -->
         <div class="row MainContent">
             <!--Side Nav Bar -->
-            <nav class="col-xs-2 bs-docs-sidebar">
+            <nav class="col-sm-3 bs-docs-sidebar">
+              <div class="container">
                 <ul id="sidebar" class="nav nav-stacked fixed">
                     <li>
                         <a href="#GroupA">Reason Analytics</a>
@@ -494,10 +489,11 @@
                         </ul>
                     </li>
                 </ul>
+              </div>
             </nav>
             
             <!--Main Content -->
-            <div class="col-xs-10">
+            <div class="col-sm-9 columnofcharts">
 
                 <section id="GroupA" class="group">
                     <h3>Reason Analytics</h3>

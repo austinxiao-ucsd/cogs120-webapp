@@ -53,6 +53,11 @@
         var dateToDisplay;
         var description;
         var reward;
+        var totalTime =0;
+        var timerId;
+        
+
+
         function saveBtnClicked() {
             nameVal = document.getElementById("textinputfield").value;
             var dateVal = document.getElementById("eventDate").value;
@@ -130,6 +135,7 @@
           var element = document.getElementById("complete-task-panel");
           var newItem = document.createElement("Added to analytics.");
           element.appendChild("Added to analytics.");
+         
         }
 
 
@@ -149,6 +155,12 @@
             newButton.innerHTML = 
             '<span class="label label-danger">Evaluation added to analytics page!</span>';
             transBtn.appendChild(newButton);
+            timerId = setInterval(function() { totalTime ++} ,1000); 
+        }
+
+        function closeTime () {
+            console.log(totalTime);
+            clearInterval(timerId);
         }
 
     </script>
@@ -373,7 +385,8 @@
               <a href="#">Task</a>
             </li>
             <li>
-              <a href="Analytics_Page.html">Analytics</a>
+              <a class = "btn" onclick = "closeTime()">Analytics</a>
+
             </li>
             <li>
               <a href="Help_Page.html">Help</a>
