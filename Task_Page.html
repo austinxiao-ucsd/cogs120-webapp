@@ -13,13 +13,15 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/timeline.css" rel="stylesheet">
     <link href="css/formstep.css" rel="stylesheet">
+    <link href="css/taskbox.css" rel="stylesheet">
+    <link href="css/bootwizard.css" rel="stylesheet">
+
 
 
     <!-- Custom Javascript -->
 
     <!-- Using AJAX to query the JSON file -->
-    <script type = "text/javascript" 
-                                       src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
     </script>
     <script type="text/javascript" src="js/formstep.js"></script>
 
@@ -164,6 +166,57 @@
             console.log(totalTime);
             clearInterval(timerId);
         }
+
+        function myFunction() {
+
+            a = document.getElementById("inner-panel");
+            var label = document.createElement("span");
+            label.className = 'button-checkbox';
+            label.innerHTML = '<button type="button" class="btn" data-color="info" style = "margin: 2px">'+document.getElementById("taginput").value+'</button>' + '<input type="checkbox" class="hidden" checked />';
+            a.appendChild(label); 
+        }
+        $(document).ready(function () {
+          var navListItems = $('div.setup-panel div a'),
+                  allWells = $('.setup-content'),
+                  allNextBtn = $('.nextBtn');
+
+          allWells.hide();
+
+          navListItems.click(function (e) {
+              e.preventDefault();
+              var $target = $($(this).attr('href')),
+                      $item = $(this);
+
+              if (!$item.hasClass('disabled')) {
+                  navListItems.removeClass('btn-primary').addClass('btn-default');
+                  $item.addClass('btn-primary');
+                  allWells.hide();
+                  $target.show();
+                  $target.find('input:eq(0)').focus();
+              }
+          });
+
+          allNextBtn.click(function(){
+              var curStep = $(this).closest(".setup-content"),
+                  curStepBtn = curStep.attr("id"),
+                  nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                  curInputs = curStep.find("input[type='text'],input[type='url']"),
+                  isValid = true;
+
+              $(".form-group").removeClass("has-error");
+              for(var i=0; i<curInputs.length; i++){
+                  if (!curInputs[i].validity.valid){
+                      isValid = false;
+                      $(curInputs[i]).closest(".form-group").addClass("has-error");
+                  }
+              }
+
+              if (isValid)
+                  nextStepWizard.removeAttr('disabled').trigger('click');
+          });
+
+          $('div.setup-panel div a.btn-primary').trigger('click');
+        });
 
     </script>
 
@@ -357,6 +410,7 @@
         .hero-widget var { display: block; height: 64px; font-size: 64px; line-height: 64px; font-style: normal; }
         .hero-widget label { font-size: 17px; }
         .hero-widget .options { margin-top: 10px; }
+
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -570,22 +624,12 @@
 
 
 
+
+
         <div class="panel with-nav-tabs panel-info">
                 <div class="panel-heading">
                         <!-- Task Panel-->
                         <h3></h3>
-                        <!--ul class="nav nav-tabs">
-                            <li class="active"><a href="#tab1info" data-toggle="tab">Info 1</a></li>
-                            <li><a href="#tab2info" data-toggle="tab">Info 2</a></li>
-                            <li><a href="#tab3info" data-toggle="tab">Info 3</a></li>
-                            <li class="dropdown">
-                                <a href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#tab4info" data-toggle="tab">Info 4</a></li>
-                                    <li><a href="#tab5info" data-toggle="tab">Info 5</a></li>
-                                </ul>
-                            </li>
-                        </ul-->
                 </div>
                 <div class="panel-body">
                     <div class="tab-content">
@@ -595,48 +639,49 @@
                                <div class="page-header">
                                 <h1 id="timeline">Manage Upcoming Tasks</h1>
                               </div>
+
                               <div class="panel-body" id = "first-panel">
 
-                              <!-- Panel content -->
-                              <a href="#" class="list-group-item">
+                                    <!-- Panel content -->
+                                    <a href="#" class="list-group-item">
 
 
 
-                              <!-- Gym Workout Panel -->
-                              <div class="pull-left form-control-inline">
-                                <!-- Task Description Title -->
-                                <div class="notice notice-info">
-                                    <!--strong>Big notice</strong-->
-                                    <h4 class="f" id="task1Name_ID"></h4>
-                                </div>
+                                    <!-- Gym Workout Panel -->
+                                    <div class="pull-left form-control-inline">
+                                      <!-- Task Description Title -->
+                                      <div class="notice notice-info">
+                                          <!--strong>Big notice</strong-->
+                                          <h4 class="f" id="task1Name_ID"></h4>
+                                      </div>
 
-                                <!-- Task name or duties-->
-                                <strong>Description</strong>
-                                <p class="list-group-item-text" id = "task1Infor_ID"></p>
-
-
-                                <strong>Due Date</strong>
-                                <p class="list-group-item-text" id = "task1Due_ID"></p>
+                                      <!-- Task name or duties-->
+                                      <strong>Description</strong>
+                                      <p class="list-group-item-text" id = "task1Infor_ID"></p>
 
 
+                                      <strong>Due Date</strong>
+                                      <p class="list-group-item-text" id = "task1Due_ID"></p>
 
-                                <strong>Rewards</strong>
-                                <p class="list-group-item-text" id = "task1rewarmy_ID"> - Steamed Chicken Breast Dinner</p>
 
-                                
-                              </div>
 
-                              <div class="checkbox pull-right">
-                                <!--span class="label label-primary pull-right">Pending</span-->
+                                      <strong>Rewards</strong>
+                                      <p class="list-group-item-text" id = "task1rewarmy_ID"> - Steamed Chicken Breast Dinner</p>
 
-                                <label>
-                                  <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#changeModal">Edit</button>
-                                </label>
-                              </div>
+                                      
+                                    </div>
 
-                              <div class="clearfix"></div>
+                                    <div class="checkbox pull-right">
+                                      <!--span class="label label-primary pull-right">Pending</span-->
 
-                              </a>
+                                      <label>
+                                        <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#changeModal">Edit</button>
+                                      </label>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    </a>
 
                             <!-- Enclosing panel body -->
                             </div>
@@ -649,22 +694,19 @@
                                 <h1 id="timeline">Did You Finish On Time?</h1>
                               </div>
                             <div class="panel-body">
-                              <!--h2> Did You Finish On Time? </h2-->
                               <!-- Panel content -->
-
                               <a href="#" class="list-group-item">
 
                                 <div class="pull-left">
-                                  <div class="panel-body" id = "transition-analytics-btn">
-                              </div>
-                                  <h4 class="list-group-item-heading" id = "task2Name_ID"></h4>
+                                  <!--div class="panel-body" id = "transition-analytics-btn">
+                                  </div-->
+                                  <h2 class="list-group-item-heading" id = "task2Name_ID"></h2>
                                   <p class="list-group-item-text" id = "task2Infor_ID"></p> 
                                   <p class="list-group-item-text" id = "task2Due_ID"></p>
                                 </div>
 
                                 <div class="checkbox pull-right">
-                                    <!--span class="label label-danger pull-right">Passed Due! </span>
-                                    <label-->
+                                    <label>
                                         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#completedModal">I finished! ;)</button>
                                     </label>
                                     <label>
@@ -809,262 +851,208 @@
             <!-- Modal Header -->
             <div class="modal-header">
               <!-- Put Image the user clicks on here -->
-              <h1>Help yourself analyze procrastination!
-              </h1>  
+              <h2>Time to Analyze Why You Procrastinate!
+              </h2>  
             </div>
 
 
             <!-- Modal Body -->
             <!-- ===================== -->
-
             <!-- Display title, description and time. -->
             <div class="modal-body">
-              
-
-              <h3 class="panel-title">Choose reason tags for procrastinating</h3>
-                  
-                <div class="panel-body" id = "incomplete-panel">
-                  <div class="col-md-6">
-                    <input id="taginput" name="textinput" type="text" placeholder="add new tag" class="form-control input-md" required="">
-
-                  </div>
-
-                    <button onclick="myFunction()">
-                      <a class="btn icon-btn btn-success">
-                        <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success">
-                        </span>
-                          Add
-                      </a>
-                    </button>
-
-                        <script>
-                        function myFunction() {
-
-                        a = document.getElementById("inner-panel");
-                        var label = document.createElement("span");
-                        label.className = 'button-checkbox';
-                        label.innerHTML = '<button type="button" class="btn" data-color="info" style = "margin: 2px">'+document.getElementById("taginput").value+'</button>' + '<input type="checkbox" class="hidden" checked />';
-
-                        a.appendChild(label); 
-                        }
-
-                        
-                        </script> 
-
-                  
-                      <div class="pull-left" id = "inner-panel">
-                        
-
-                        <span class="button-checkbox">
-                          <button type="button" class="btn" data-color="default">Laziness</button>
-                          <input type="checkbox" class="hidden" checked />
-                        </span>
-                        <span class="button-checkbox">
-                          <button type="button" class="btn" data-color="primary">Overload</button>
-                          <input type="checkbox" class="hidden" checked />
-                        </span>
-                        <span class="button-checkbox">
-                          <button type="button" class="btn" data-color="success">Too Tired</button>
-                          <input type="checkbox" class="hidden" checked />
-                        </span>
-                        <span class="button-checkbox">
-                          <button type="button" class="btn" data-color="info">Late</button>
-                          <input type="checkbox" class="hidden" checked />
-                        </span>
-                        <span class="button-checkbox">
-                          <button type="button" class="btn" data-color="warning">Not Important</button>
-                          <input type="checkbox" class="hidden" checked />
-                        </span>
-                        <span class="button-checkbox">
-                          <button type="button" class="btn" data-color="danger">Others</button>
-                          <input type="checkbox" class="hidden" checked />
-                        </span> 
-                        
-                        
-
-                      </div>
-
-                </div>
-             
-
-
-
-
-                <!--form>
-                  <h3>Rate Your Emotion</h3>
-                  <h5>How happy do you feel?</h5-->
-                  <!--div class="review-block-rate">
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    </div-->
-
-                   
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Rate your emotion - Please rate your current feeling below.</h3>
-              <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-            </div>
-            <div class="panel-body">
-                <div class="row pull-left">
-                      <div class="form-group" >
-                        <label class="col-md-4 control-label" for="eventType">Angry</label>
-                        <div class="col-md-6">
-                          <select id="eventType" name="eventType" class="form-control">
-                            <option value="TOURNAMENT">5 (Mad)</option>
-                            <option value="PRACTICE">4 (Angry) </option>
-
-                            <option value="PRACTICE">3 (Frustrated) </option>
-                            <option value="PRACTICE">2 (Moderately annoyed) </option>
-                            <option value="PRACTICE">1 (not angry at all)</option>
-
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-
-                       <div class="row pull-left">
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="eventType">Anxiety</label>
-                          <div class="col-md-6">
-                            <select id="eventType" name="eventType" class="form-control">
-                              <option value="TOURNAMENT">5 (stressed)</option>
-                              <option value="PRACTICE">4 (anxious)</option>
-                              <option value="PRACTICE">3 (unease)</option>
-                              <option value="PRACTICE">2 (Moderately unease)</option>
-                              <option value="PRACTICE">1(not anxious at all)</option>
-
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row pull-left">
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="eventType">Satisfication</label>
-                          <div class="col-md-6">
-                            <select id="eventType" name="eventType" class="form-control">
-                              <option value="TOURNAMENT">1 (not satisfied at all)</option>
-                              <option value="PRACTICE">2 (Moderately satisfied)</option>
-                              <option value="PRACTICE">3 (Average)</option>
-                              <option value="PRACTICE">4 (Moderately satisfied)</option>
-                              <option value="PRACTICE">5 (Most satisfied)</option>
-
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-
-
-                    <div class="row pull-left">
-                      <div class="form-group" >
-                        <label class="col-md-4 control-label" for="eventType">Happy</label>
-                        <div class="col-md-6">
-                          <select id="eventType" name="eventType" class="form-control">
-                            <option value="TOURNAMENT">1 (unhappy)</option>
-                            <option value="PRACTICE">2 (Moderately unhappy)</option>
-                            <option value="PRACTICE">3 (Average)</option>
-                            <option value="PRACTICE">4 (Moderately happy)</option>
-                            <option value="PRACTICE">5 (happy)</option>
-
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    
-
-                      </div>
-                    </div>
-                  
-
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Other information</h3>
-              <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-            </div>
-            <div class="panel-body">
-              <div class="row">
-
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="eventType">How positive people involved will feel about you</label>
-                        <div class="col-md-6">
-                          <select id="eventType" name="eventType" class="form-control">
-                            <option value="TOURNAMENT">No people involved</option>
-                            <option value="PRACTICE">1(least positive)</option>
-                            <option value="PRACTICE">2</option>
-                            <option value="PRACTICE">3</option>
-                            <option value="PRACTICE">4</option>
-                            <option value="PRACTICE">5(most positive)</option>
-
-                          </select>
-                        </div>
-                      </div>
+              <div class="form-bootstrapWizard">
+                  <ul class="bootstrapWizard form-wizard">
+                      <li class="active" data-target="#step1">
+                          <a href="#tab1" data-toggle="tab" class="active"> <span class="step">1</span> <span class="title">Choose reasons</span> </a>
+                      </li>
+                      <li data-target="#step2" class="">
+                          <a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Rate emotions</span> </a>
+                      </li>
+                      <li data-target="#step3" class="">
+                          <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Other information</span> </a>
+                      </li>
+                      <li data-target="#step4">
+                          <a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span class="title">Comments</span> </a>
+                      </li>
+                  </ul>
+                <div class="clearfix"></div>
               </div>
 
-              <div class="row">
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="eventType">Did you use any kind of reminder?</label>
-                          <div class="col-md-4">
-                            <select id="eventType" name="eventType" class="form-control">
-                              <option value="TOURNAMENT">No</option>
-                              <option value="PRACTICE">Yes</option>
-                            </select>
-                          </div>
 
-                          <!--div class = "row">
-                          <textarea class="form-control" id="message-text" placeholder="name of the reminder"></textarea>  
-                        </div-->
-                        </div>
-                        <!--div class = "row"-->
-                          <form>
-                              <div class="form-group">
-                                <textarea class="form-control" id="message-text" placeholder="name of the reminder"></textarea>              
-                              </div>
-                          </form>
-              <!--/div-->
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab1">
+                                        <br>
+                                        <h3><strong>Step 1 </strong> - Choose Reasons For Procrastination.</h3>
+                                          <div class="panel-body" id = "incomplete-panel">
+                                                  <div class="form-group">
+                                                    <input id="taginput" name="textinput" type="text" placeholder="Add Customized Tags Here." class="form-control input-md" required="">
+                                                  </div>
 
-              </div>
+                                                  <a onclick="myFunction()" class="btn icon-btn btn-success form-group">
+                                                    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success">
+                                                    </span>
+                                                      Add
+                                                  </a>
 
-              
+                                              <div class = "form-group">
+                                                  <h3></h3>
+                                                  <div class="pull-left" id = "inner-panel">
+                                                        <span class="button-checkbox">
+                                                          <button type="button" class="btn" data-color="default">Laziness</button>
+                                                          <input type="checkbox" class="hidden" checked />
+                                                        </span>
+                                                        <span class="button-checkbox">
+                                                          <button type="button" class="btn" data-color="primary">Overload</button>
+                                                          <input type="checkbox" class="hidden" checked />
+                                                        </span>
+                                                        <span class="button-checkbox">
+                                                          <button type="button" class="btn" data-color="success">Too Tired</button>
+                                                          <input type="checkbox" class="hidden" checked />
+                                                        </span>
+                                                        <span class="button-checkbox">
+                                                          <button type="button" class="btn" data-color="info">Late</button>
+                                                          <input type="checkbox" class="hidden" checked />
+                                                        </span>
+                                                        <span class="button-checkbox">
+                                                          <button type="button" class="btn" data-color="warning">Not Important</button>
+                                                          <input type="checkbox" class="hidden" checked />
+                                                        </span>
+                                                        <span class="button-checkbox">
+                                                          <button type="button" class="btn" data-color="danger">Others</button>
+                                                          <input type="checkbox" class="hidden" checked />
+                                                        </span> 
+                                                  </div>
+                                              </div>
+                                            </div>
 
-              
+                                    </div>
+                                    <div class="tab-pane" id="tab2">
+                                        <br>
+                                        <h3><strong>Step 2</strong> - Rate Emotions Below.</h3>
 
-              <form>
-                  <div class="form-group">
-                    <label for="message-text" class="control-label">Description</label>
-                    <textarea class="form-control" id="message-text"></textarea>              
-                  </div>
-              </form>
+<form>
+                                        <div class="form-group row" >
+                                          <label class="col-md-4 control-label" for="eventType">Angry</label>
+                                          <div class="col-md-6">
+                                            <select id="eventType" name="eventType" class="form-control">
+                                              <option value="TOURNAMENT">5 (Mad)</option>
+                                              <option value="PRACTICE">4 (Angry) </option>
 
-           </div>
-          </div>
+                                              <option value="PRACTICE">3 (Frustrated) </option>
+                                              <option value="PRACTICE">2 (Moderately annoyed) </option>
+                                              <option value="PRACTICE">1 (not angry at all)</option>
 
-          
-          </div>
+                                            </select>
+                                          </div>
+                                        </div>
 
-          <!-- Modal Footer -->
-          <div class="modal-footer">
-            <button onclick = "addTransition()" type="button" class="btn btn-submit" data-dismiss="modal">
-              Confirm
-            </button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">
-              Cancel
-            </button>
-          </div>
+                                        <div class="form-group row">
+                                          <label class="col-md-4 control-label" for="eventType">Anxiety</label>
+                                          <div class="col-md-6">
+                                            <select id="eventType" name="eventType" class="form-control">
+                                              <option value="TOURNAMENT">5 (stressed)</option>
+                                              <option value="PRACTICE">4 (anxious)</option>
+                                              <option value="PRACTICE">3 (unease)</option>
+                                              <option value="PRACTICE">2 (Moderately unease)</option>
+                                              <option value="PRACTICE">1(not anxious at all)</option>
+
+                                            </select>
+                                          </div>
+                                        </div>
+
+
+                                        <div class="form-group row">
+                                          <label class="col-md-4 control-label" for="eventType">Satisfication</label>
+                                          <div class="col-md-6">
+                                            <select id="eventType" name="eventType" class="form-control">
+                                              <option value="TOURNAMENT">1 (not satisfied at all)</option>
+                                              <option value="PRACTICE">2 (Moderately satisfied)</option>
+                                              <option value="PRACTICE">3 (Average)</option>
+                                              <option value="PRACTICE">4 (Moderately satisfied)</option>
+                                              <option value="PRACTICE">5 (Most satisfied)</option>
+
+                                            </select>
+                                          </div>
+                                        </div>
+
+                                        <div class="form-group row" >
+                                            <label class="col-md-4 control-label" for="eventType">Happy</label>
+                                            <div class="col-md-6">
+                                              <select id="eventType" name="eventType" class="form-control">
+                                                <option value="TOURNAMENT">1 (unhappy)</option>
+                                                <option value="PRACTICE">2 (Moderately unhappy)</option>
+                                                <option value="PRACTICE">3 (Average)</option>
+                                                <option value="PRACTICE">4 (Moderately happy)</option>
+                                                <option value="PRACTICE">5 (happy)</option>
+
+                                              </select>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </form>
+
+                                    </div>
+                                    <div class="tab-pane" id="tab3">
+                                        <br>
+                                        <h3><strong>Step 3</strong> - Other Information.</h3>
+                                            <div class="form-group row">
+                                          <label class="col-md-4 control-label" for="eventType">How positive people involved will feel about you</label>
+                                          <div class="col-md-6">
+                                            <select id="eventType" name="eventType" class="form-control">
+                                              <option value="TOURNAMENT">No people involved</option>
+                                              <option value="PRACTICE">1(least positive)</option>
+                                              <option value="PRACTICE">2</option>
+                                              <option value="PRACTICE">3</option>
+                                              <option value="PRACTICE">4</option>
+                                              <option value="PRACTICE">5(most positive)</option>
+
+                                            </select>
+                                          </div>
+                                        </div>                                
+
+                                        <div class="form-group row">
+                                          <label class="col-md-4 control-label" for="eventType">Did you use any kind of reminder?</label>
+                                          <div class="col-md-4">
+                                            <select id="eventType" name="eventType" class="form-control">
+                                              <option value="TOURNAMENT">No</option>
+                                              <option value="PRACTICE">Yes</option>
+                                            </select>
+                                          </div>
+
+                                        </div>
+
+
+                                          <div class="form-group row">
+                                            <textarea class="form-control" id="message-text" placeholder="If yes, please describe the reminder information."></textarea>              
+                                          </div>
+
+                                    </div>
+
+                                    <div class="tab-pane" id="tab4">
+                                        <br>
+                                        <h3><strong>Step 4</strong> - Comments.</h3>
+                                            <div class="form-group">
+                                                <label for="message-text" class="control-label">Description</label>
+                                                <textarea class="form-control" placeholder="If applicable, please describe all other reasons for procrastination." id="message-text"></textarea>             
+                                            </div>
+                                        <br>
+
+                                    </div>
+                                    
+
+                                </div>  
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+              <button onclick = "addTransition()" type="button" class="btn btn-default" data-dismiss="modal">
+                Confirm
+              </button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                Cancel
+              </button>
+            </div>
 
         </div>
       </div>
