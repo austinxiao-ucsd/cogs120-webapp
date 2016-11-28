@@ -15,6 +15,7 @@
     <link href="css/formstep.css" rel="stylesheet">
     <link href="css/taskbox.css" rel="stylesheet">
     <link href="css/bootwizard.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
 
 
 
@@ -411,6 +412,10 @@
         .hero-widget label { font-size: 17px; }
         .hero-widget .options { margin-top: 10px; }
 
+        body {
+			font-family: 'Open Sans', sans-serif;
+		}
+
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -520,7 +525,7 @@
                                   <label class="text-muted">Rewards</label>
                               </div>
                               <div class="options">
-                                  <a href="#tab3info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-heart"></i> Check Rewards</a>
+                                  <a href="#tab3info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-heart"></i> View History</a>
                               </div>
                           </div>
                   </div>
@@ -637,7 +642,9 @@
                         <!-- View upcoming tasks here -->
                         <div class="tab-pane fade in active" id="tab1info">
                                <div class="page-header">
+                               <font color = "#064461">
                                 <h1 id="timeline">Manage Upcoming Tasks</h1>
+                                </font>
                               </div>
 
                               <div class="panel-body" id = "first-panel">
@@ -691,15 +698,19 @@
                         <div class="tab-pane fade" id="tab2info">
                             <!--div class="panel-heading"></div-->
                               <div class="page-header">
+                              	<!--font color = "#32718f"-->
+                              	
+                              	<font color = "#064461">
                                 <h1 id="timeline">Did You Finish On Time?</h1>
+                                </font>
+
                               </div>
+
                             <div class="panel-body">
                               <!-- Panel content -->
                               <a href="#" class="list-group-item">
 
                                 <div class="pull-left">
-                                  <!--div class="panel-body" id = "transition-analytics-btn">
-                                  </div-->
                                   <h2 class="list-group-item-heading" id = "task2Name_ID"></h2>
                                   <p class="list-group-item-text" id = "task2Infor_ID"></p> 
                                   <p class="list-group-item-text" id = "task2Due_ID"></p>
@@ -707,10 +718,11 @@
 
                                 <div class="checkbox pull-right">
                                     <label>
-                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#completedModal">I finished! ;)</button>
+                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#completedModal">I finished!</button>
                                     </label>
+                                    <h4></h4>
                                     <label>
-                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#incompletedModal">Oh-no! :(</button>
+                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#incompletedModal">Oh-no!</button>
                                     </label>
                                 </div>
                                 <div class="clearfix"></div>
@@ -718,13 +730,16 @@
                               <!-- Enclosing panel body -->
                               
                             </div>
+
                         </div>
 
 
                         <div class="tab-pane fade" id="tab3info">
                                     <div class="container">
                                       <div class="page-header">
+                                      	  <font color = "#064461">
                                           <h1 id="timeline">Rewards History</h1>
+                                          </font>
                                       </div>
                                       <ul class="timeline">
                                           <li>
@@ -743,7 +758,7 @@
                                             <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
                                             <div class="timeline-panel">
                                               <div class="timeline-heading">
-                                                <h4 class="timeline-title">One Full Chocolate Pie.</h4>
+                                                <h4 class="timeline-title">One Full Chocolate Pie</h4>
                                                 <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3 days ago</small></p>
                                               </div>
                                               <div class="timeline-body">
