@@ -224,7 +224,7 @@
     <!-- Custom CSS -->
     <style>
         body {
-          padding-top: 70px;
+          /*padding-top: 10px;*/
           /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
         }
 
@@ -465,71 +465,6 @@
 
 
 
-    <!-- Title bar for adding tasks -->
-    <div class = "container">
-      <div class = "list-group">
-        <!-- Task panel -->
-        <div class="panel panel-info">
-
-          <div class="panel-heading">
-              <div class="row">
-                  <div class="col-sm-3">
-                        <div class="hero-widget well well-sm">
-                              <div class="icon">
-                                   <i class="glyphicon glyphicon-plus"></i>
-                              </div>
-                              <div class="text">
-                                  <!--var>3</var-->
-                                  <label class="text-muted">Add New Tasks</label>
-                              </div>
-                              <div class="options">
-                                  <a href="javascript:;" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i> Add Tasks</a>
-                              </div>
-                          </div>
-                  </div>
-                      <div class="col-sm-3">
-                          <div class="hero-widget well well-sm">
-                              <div class="icon">
-                                   <i class="glyphicon glyphicon-dashboard"></i>
-                              </div>
-                              <div class="text">
-                                  <!--var>614</var-->
-                                  <label class="text-muted">Upcoming Tasks</label>
-                              </div>
-                              <div class="options">
-                                  <a a href="#tab1info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-pencil"></i> View Tasks</a>
-                              </div>
-                          </div>
-                  </div>
-                      <div class="col-sm-3">
-                          <div class="hero-widget well well-sm">
-                              <div class="icon">
-                                   <i class="glyphicon glyphicon-exclamation-sign"></i>
-                              </div>
-                              <div class="text">
-                                  <!--var>73</var-->
-                                  <label class="text-muted">Past Tasks</label>
-                              </div>
-                              <div class="options">
-                                  <a href="#tab2info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-search"></i> Rate Tasks</a>
-                              </div>
-                          </div>
-                    </div>
-                      <div class="col-sm-3">
-                          <div class="hero-widget well well-sm">
-                              <div class="icon">
-                                   <i class="glyphicon glyphicon-piggy-bank"></i>
-                              </div>
-                              <div class="text">
-                                  <!--var>75%</var-->
-                                  <label class="text-muted">Rewards</label>
-                              </div>
-                              <div class="options">
-                                  <a href="#tab3info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-heart"></i> View History</a>
-                              </div>
-                          </div>
-                  </div>
-              </div>
             <!-- Modal pop up when the add button is hitten-->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -622,19 +557,70 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- End of the Task Panel-->
-        </div>
-
-
 
 
 
         <div class="panel with-nav-tabs panel-info">
                 <div class="panel-heading">
                         <!-- Task Panel-->
-                        <h3></h3>
+                                      <div class="row">
+                  <div class="col-sm-3">
+                        <div class="hero-widget well well-sm">
+                              <div class="icon">
+                                   <i class="glyphicon glyphicon-plus"></i>
+                              </div>
+                              <div class="text">
+                                  <!--var>3</var-->
+                                  <label class="text-muted">Add New Tasks</label>
+                              </div>
+                              <div class="options">
+                                  <a href="javascript:;" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i> Add Tasks</a>
+                              </div>
+                          </div>
+                  </div>
+                      <div class="col-sm-3">
+                          <div class="hero-widget well well-sm">
+                              <div class="icon">
+                                   <i class="glyphicon glyphicon-dashboard"></i>
+                              </div>
+                              <div class="text">
+                                  <!--var>614</var-->
+                                  <label class="text-muted">Upcoming Tasks</label>
+                              </div>
+                              <div class="options">
+                                  <a a href="#tab1info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-pencil"></i> View Tasks</a>
+                              </div>
+                          </div>
+                  </div>
+                      <div class="col-sm-3">
+                          <div class="hero-widget well well-sm">
+                              <div class="icon">
+                                   <i class="glyphicon glyphicon-exclamation-sign"></i>
+                              </div>
+                              <div class="text">
+                                  <!--var>73</var-->
+                                  <label class="text-muted">Past Tasks</label>
+                              </div>
+                              <div class="options">
+                                  <a href="#tab2info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-search"></i> Rate Tasks</a>
+                              </div>
+                          </div>
+                    </div>
+                      <div class="col-sm-3">
+                          <div class="hero-widget well well-sm">
+                              <div class="icon">
+                                   <i class="glyphicon glyphicon-piggy-bank"></i>
+                              </div>
+                              <div class="text">
+                                  <!--var>75%</var-->
+                                  <label class="text-muted">Rewards</label>
+                              </div>
+                              <div class="options">
+                                  <a href="#tab3info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-heart"></i> View History</a>
+                              </div>
+                          </div>
+                  </div>
+              </div>
                 </div>
                 <div class="panel-body">
                     <div class="tab-content">
@@ -1242,7 +1228,7 @@
 
             <!-- Modal Footer -->
             <div class="modal-footer">
-              <button onclick = "addTransition()" type="button" class="btn btn-submit" data-dismiss="modal">
+              <button onclick = "addTransition()" type="button" class="btn btn-default" data-dismiss="modal">
                 Confirm
               </button>
               <button type="button" class="btn btn-default" data-dismiss="modal">
