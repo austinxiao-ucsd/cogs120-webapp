@@ -18,39 +18,13 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
 
 
-
-    <!-- Custom Javascript -->
-
     <!-- Using AJAX to query the JSON file -->
     <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
     </script>
     <script type="text/javascript" src="js/formstep.js"></script>
+    <script type="text/javascript" src="js/readjson.js"></script>
 
-    <script type = "text/javascript" language = "javascript">
-        $(document).ready(function() { 
-          $.getJSON('result.json', function(jd) {
-            $("#task1Name_ID").text(jd.task1);
-            $("#task1Infor_ID").text(jd.des1);
-            $("#task1Due_ID").text(jd.dueTime1);
-            $("#task2Name_ID").text(jd.task2);
-            $("#task2Infor_ID").text(jd.des2);
-            $("#task2Due_ID").text(jd.dueTime2);
-          });
-        });
 
-            $(document).on('click', '.panel-heading span.clickable', function(e){
-            var $this = $(this);
-        	if(!$this.hasClass('panel-collapsed')) {
-        		$this.parents('.panel').find('.panel-body').slideUp();
-        		$this.addClass('panel-collapsed');
-        		$this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-        	} else {
-        		$this.parents('.panel').find('.panel-body').slideDown();
-        		$this.removeClass('panel-collapsed');
-        		$this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-        	}
-      })
-    </script>
 
     <!-- Using the onclick function -->
     <script>
@@ -61,8 +35,6 @@
         var totalTime =0;
         var timerId;
         
-
-
         function saveBtnClicked() {
             nameVal = document.getElementById("textinputfield").value;
             var dateVal = document.getElementById("eventDate").value;
@@ -84,7 +56,7 @@
             var newItem = document.createElement("a");
             newItem.innerHTML = 
             '<div class="pull-left form-control-inline">'
-            + '<div class="notice notice-success">'
+            + '<div class="notice notice-info">'
             + '<h4 class="f" id="editNameChange">' 
             + nameVal 
             + '</h4>'
@@ -102,9 +74,10 @@
             + dateToDisplay
             + '</div>'
             + '<strong>Rewards</strong >'  
-            + '</p>'
+            + '<p class="list-group-item-text">'
             + '<div id = "editRewardChange">'
             + reward
+            + '</p>'
             + '</div>'
             + '</div>'
             + '<div class="checkbox pull-right">'
@@ -127,7 +100,6 @@
 
           // display the chaned time
           var dateVal = document.getElementById("eventDate2").value;
-          console.log(dateVal);
           dateToDisplay = dateVal.substring(0, 2) + '/'
                 + dateVal.substring(3, 5) + '/'
                 + dateVal.substring(6, 10);
@@ -143,15 +115,14 @@
          
         }
 
-
-
         function addCollaborator() {
             b = document.getElementById("collaboratorPanel");
             var label1 = document.createElement("span");
             label1.className = 'button-checkbox';
             label1.innerHTML = '<button type="button" class="btn" data-color="info" style = "margin: 2px">'+document.getElementById("ppl_input").value+'</button>' + '<input type="checkbox" class="hidden" checked />';
-
-            b.appendChild(label1); 
+            if(document.getElementById("ppl_input").value != "") {
+            	b.appendChild(label1); 
+        	}
         }
 
         function addTransition() {
@@ -167,6 +138,7 @@
             console.log(totalTime);
             clearInterval(timerId);
         }
+
 
         function myFunction() {
 
@@ -511,7 +483,7 @@
                           <label class="col-md-4 control-label" for="eventDate">Expected Due Date</label>
                           <div class="col-md-4">
                             <div class="input-group">
-                              <input id="eventDate" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
+                              <input id="eventDate" name="eventDate" class="form-control" placeholder="MM/DD/YYYY" type="text" required="">
                               <!--span class="input-group-addon">Calendar</span-->
                             </div>
 
@@ -526,8 +498,9 @@
                               <option value="TOURNAMENT">Study</option>
                               <option value="PRACTICE">Social</option>
                               <option value="PRACTICE">Work</option>
-                              <option value="PRACTICE">Fun</option>
+                              <option value="PRACTICE">Entertainment</option>
                               <option value="PRACTICE">Health</option>
+                              <option value="PRACTICE">Others</option>
                             </select>
                           </div>
                         </div>
@@ -535,7 +508,7 @@
                         <div class="form-group">
                                 <label class="col-sm-4 control-label" for="venueName">Collaborators</label>
                                 <div class="col-sm-4">
-                                    <input id="ppl_input" name="pplinput" type="text" placeholder="add new people" class="form-control input-md col-md-6" required="" value="">
+                                    <input id="ppl_input" name="pplinput" type="text" placeholder="Type name here" class="form-control input-md col-md-6" required="" value="">
                                 </div>
                                 <div class="col-sm-4">
                                       <a onclick = "addCollaborator()" class="btn icon-btn btn-primary">
@@ -659,7 +632,7 @@
 
 
                                       <strong>Rewards</strong>
-                                      <p class="list-group-item-text" id = "task1rewarmy_ID"> - Steamed Chicken Breast Dinner</p>
+                                      <p class="list-group-item-text" id = "task1rewarmy_ID"> - Ice Cream Sundae For Dinner.</p>
 
                                       
                                     </div>
@@ -732,7 +705,7 @@
                                             <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
                                             <div class="timeline-panel">
                                               <div class="timeline-heading">
-                                                <h4 class="timeline-title">Ice Scream at Round Robins</h4>
+                                                <h4 class="timeline-title">Ice Cream at Round Robins</h4>
                                                 <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 12 hours ago</small></p>
                                               </div>
                                               <div class="timeline-body">
@@ -754,10 +727,11 @@
                                           </li>
                                           <li>
                                             <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
-                                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 1 weel ago</small></p>
+                                            
                                             <div class="timeline-panel">
                                               <div class="timeline-heading">
                                                 <h4 class="timeline-title">Dinner at Philip's Steak House.</h4>
+                                                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 1 week ago</small></p>
                                               </div>
                                               <div class="timeline-body">
                                                 <p>Note: I helped my brother with his Math homework and prepared him for the upcoming SAT test.</p>
