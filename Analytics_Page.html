@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
 
-    <title>Analytics Page</title>
+    <title>PRO Analytics</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -213,7 +213,7 @@
         ]);
 
         var options = {
-            title: 'Degrees of happy for tasks rated',
+            title: 'Degrees of happiness for rated tasks',
             legend: {position: 'bottom', textStyle: {color: 'black', fontSize: 11}},
             fontSize: 13,
         };
@@ -234,7 +234,7 @@
         ]);
 
         var options = {
-            title: 'Degrees of anxious for tasks rated',
+            title: 'Degrees of anxious for rated tasks',
             legend: {position: 'bottom', textStyle: {color: 'black', fontSize: 11}},
             fontSize: 13
         };
@@ -255,7 +255,7 @@
         ]);
 
         var options = {
-            title: 'Degrees of upset for tasks rated',
+            title: 'Degrees of upset for rated tasks',
             legend: {position: 'bottom', textStyle: {color: 'black', fontSize: 11}},
             fontSize: 13
         };
@@ -276,7 +276,7 @@
         ]);
 
         var options = {
-            title: 'Degrees of satisfication for tasks rated',
+            title: 'Degrees of satisfication for rated tasks',
             legend: {position: 'bottom', textStyle: {color: 'black', fontSize: 11}},
             fontSize: 13
         };
@@ -297,7 +297,7 @@
         ]);
 
         var options = {
-          title: 'Completed vs Incompleted in Different Task Catagories',
+          title: 'Completed vs Incompleted status in different task categories',
           vAxis: {title: 'Number of Tasks'},
           isStacked: true,
           legend: {position: 'bottom', textStyle: {color: 'black', fontSize: 11}},
@@ -317,7 +317,7 @@
         ]);
 
         var options = {
-          title: 'Completed vs Incompleted Considering the Use of Reminder',
+          title: 'Completed vs Incompleted status based on the use of reminder',
           vAxis: {title: 'Number of Tasks'},
           legend: {position: 'bottom', textStyle: {color: 'black', fontSize: 11}},
           fontSize: 13
@@ -336,7 +336,7 @@
         ]);
 
         var options = {
-          title: 'Completed vs Incompleted Considering the Set of Reward',
+          title: 'Completed vs Incompleted status based on the use of reward',
           vAxis: {title: 'Number of Tasks'},
           legend: {position: 'bottom', textStyle: {color: 'black', fontSize: 11}},
           fontSize: 13
@@ -357,7 +357,7 @@
         ]);
 
         var options = {
-          title: 'Completed vs Incompleted Involved with Different Peoples',
+          title: 'Completed vs Incompleted status involved with different people',
           vAxis: {title: 'Number of Tasks'},
           isStacked: true,
           legend: {position: 'bottom', textStyle: {color: 'black', fontSize: 11}},
@@ -377,7 +377,7 @@
         ]);
 
         var options = {
-          title: 'Completed vs Incompleted by Solo or Group Work',
+          title: 'Completed vs Incompleted status by individual or group work',
           vAxis: {title: 'Number of Tasks'},
           legend: {position: 'bottom', textStyle: {color: 'black', fontSize: 11}},
           fontSize: 13
@@ -399,7 +399,7 @@
         ]);
 
         var options = {
-          title: 'Degrees of Other\s Feeling about You',
+          title: 'Degrees of influence on others',
           vAxis: {title: 'Number of Tasks'},
           legend: {position: 'bottom', textStyle: {color: 'black', fontSize: 11}},
           fontSize: 13,
@@ -457,17 +457,17 @@
               <div class="container">
                 <ul id="sidebar" class="nav nav-stacked fixed">
                     <li>
-                        <a href="#GroupA">Reason Analytics</a>
+                        <a href="#GroupA">Reason of Procrastination</a>
                     </li>
                     <li>
-                        <a href="#GroupB">Task Catagory Analytics</a>
+                        <a href="#GroupB">Task Categories</a>
                         <ul class="nav nav-stacked">
                             <li><a href="#GroupBSub1">Donut Chart</a></li>
                             <li><a href="#GroupBSub2">Area Chart</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#GroupC">Emotion Anlytics</a>
+                        <a href="#GroupC">Emotion Analytics</a>
                         <ul class="nav nav-stacked">
                             <li><a href="#GroupCSub1">Happy</a></li>
                             <li><a href="#GroupCSub2">Anxious</a></li>
@@ -476,17 +476,17 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#GroupD">Use of Reminder Analytics</a>
+                        <a href="#GroupD">Use of Reminder</a>
                     </li>
                     <li>
-                        <a href="#GroupE">Set of Reward Analytics</a>
+                        <a href="#GroupE">Use of Rewards</a>
                     </li>
                     <li>
-                        <a href="#GroupF">People Involved Analytics</a>
+                        <a href="#GroupF">People Involved</a>
                         <ul class="nav nav-stacked">
-                            <li><a href="#GroupFSub1">Different People's Influence</a></li>
-                            <li><a href="#GroupFSub2">Solo vs Group Work</a></li>
-                            <li><a href="#GroupFSub3">Other's Feeling</a></li>
+                            <li><a href="#GroupFSub1">Peer Influence</a></li>
+                            <li><a href="#GroupFSub2">Individual vs Group Work</a></li>
+                            <li><a href="#GroupFSub3">Peer's Feeling</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -497,12 +497,12 @@
             <div class="col-sm-9 columnofcharts">
 
                 <section id="GroupA" class="group">
-                    <h3>Reason Analytics</h3>
+                    <h3>Reason of Procrastination</h3>
                     <div id="top_x_div" style="width: 99%; height: 99%;"></div>
                 </section>
 
                 <section id="GroupB" class="group">
-                    <h3>Task Catagory Analytics</h3>
+                    <h3>Task Categories</h3>
                     <div id="GroupBSub1" class="subgroup">
                         <h4>Donut Chart</h4>
                         <div id="donutchart" style="width: 99%; height: 99%;"></div>
@@ -534,27 +534,27 @@
                 </section>
 
                 <section id="GroupD" class="group">
-                    <h3>Use of Reminder Analytics</h3>
+                    <h3>Use of Reminder</h3>
                     <div id="chart_div_reminder" style="width: 99%; height: 99%;"></div>
                 </section>
 
                 <section id="GroupE" class="group">
-                    <h3>Set of Reward Analytics</h3>
+                    <h3>Use of Rewards</h3>
                     <div id="chart_div_reward" style="width: 99%; height: 99%;"></div>
                 </section>
 
                 <section id="GroupF" class="group">
-                    <h3>People Involved Analytics</h3>
+                    <h3>People Involved</h3>
                     <div id="GroupFSub1" class="subgroup">
                         <h4>Different People's Influence</h4>
                         <div id="chart_ppl_diff" style="width: 99%; height: 99%;"></div>
                     </div>
                     <div id="GroupFSub2" class="subgroup">
-                        <h4>Solo vs Group Work</h4>
+                        <h4>Individual vs Group Work</h4>
                         <div id="chart_ppl_SvsG" style="width: 99%; height: 99%;"></div>
                     </div>
                     <div id="GroupFSub3" class="subgroup">
-                        <h4>Other's Feeling</h4>
+                        <h4>Peer's Feeling</h4>
                         <div id="chart_ppl_feel" style="width: 99%; height: 99%;"></div>
                     </div>
                 </section>

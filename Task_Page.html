@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Task Page</title>
+    <title>PRO Tasks</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -36,6 +36,13 @@
         var timerId;
         
         function saveBtnClicked() {
+            var incrementTask = document.getElementById("new-up-task");
+            incrementTask.innerHTML = 
+                              '<div class="text">' +
+                                  '<label class="text-muted" id = "new-up-task">'
+                                  + '2 Upcoming Tasks' + '</label>' +
+                              '</div>';
+
             nameVal = document.getElementById("textinputfield").value;
             var dateVal = document.getElementById("eventDate").value;
             var task = document.getElementById('textinputfield2');
@@ -51,6 +58,29 @@
                 + dateVal.substring(6, 10);
             description = document.getElementById("task-description").value;
             console.log(description);
+
+            // Error checkings
+            if (nameVal.length == 0) {
+            	nameVal = "Default Event";
+            }
+
+            // check for valid date format
+            var date_regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+
+			if(!(date_regex.test(dateVal)))
+			{
+				dateToDisplay = "[ Default Date ]";
+			}
+
+			// check for valid description
+			if (description.length == 0) {
+				description = "[ Default Description ]";
+			}
+
+			// check for the valid event
+			if (reward.length == 0) {
+				reward = "[ Default Reward ]";
+			}
 
             var element = document.getElementById("first-panel");
             var newItem = document.createElement("a");
@@ -96,7 +126,9 @@
           // display the task name
           nameVal = document.getElementById("textinputfield2").value;
           var currName = document.getElementById("editNameChange");
-          currName.innerHTML = nameVal;
+          if (nameVal.length != 0) {
+          	currName.innerHTML = nameVal;
+      	  }
 
           // display the chaned time
           var dateVal = document.getElementById("eventDate2").value;
@@ -104,9 +136,22 @@
                 + dateVal.substring(3, 5) + '/'
                 + dateVal.substring(6, 10);
           var currTime = document.getElementById("editTimeChange");
-          currTime.innerHTML = dateToDisplay;
+            // check for valid date format
+            var date_regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+			if((date_regex.test(dateVal)))
+			{
+				currTime.innerHTML = dateToDisplay;
+			}
+
+          var newDescription = document.getElementById("task-description2");
           var currDescription = document.getElementById("editDescription");
-          currDescription.innerHTML = description;
+          if (newDescription.value.length != 0) {
+          	currDescription.innerHTML = newDescription.value;
+      	  }
+
+      	  rewardVal = document.getElementById("edit-reward-description");
+      	  var rewardName = document.getElementById("editRewardChange");
+      	  	rewardName.innerHTML = rewardVal.value;
         }
         function completedBtnClicked() {
           var element = document.getElementById("complete-task-panel");
@@ -137,6 +182,21 @@
         function closeTime () {
             console.log(totalTime);
             clearInterval(timerId);
+        }
+
+        function showAnalytics() {
+          
+
+
+          var analyticsPanel = document.getElementById("analytics-notice");
+          var notice = document.createElement("span");
+          notice.className = "analytics-notice-btn";
+
+          notice.innerHTML = 
+          '<a href="Analytics_Page.html">' + 
+          '<button type="button"   class="btn-info" data-color="info" href="Analytics_Page.html" style = "margin: 2px">'+ 'Updated to Analytics Page!' +'</button>' + '<input type="checkbox" class="hidden" checked />'
+          '</a>';
+          analyticsPanel.appendChild(notice);
         }
 
 
@@ -423,7 +483,7 @@
               <a href="#">Task</a>
             </li>
             <li>
-              <a href="Analytics_Page.html" class = "btn" onclick = "closeTime()">Analytics</a>
+              <a href="Analytics_Page.html">Analytics</a>
 
             </li>
             <li>
@@ -498,7 +558,7 @@
                               <option value="TOURNAMENT">Study</option>
                               <option value="PRACTICE">Social</option>
                               <option value="PRACTICE">Work</option>
-                              <option value="PRACTICE">Entertainment</option>
+                              <option value="PRACTICE">Fun</option>
                               <option value="PRACTICE">Health</option>
                               <option value="PRACTICE">Others</option>
                             </select>
@@ -511,7 +571,7 @@
                                     <input id="ppl_input" name="pplinput" type="text" placeholder="Type name here" class="form-control input-md col-md-6" required="" value="">
                                 </div>
                                 <div class="col-sm-4">
-                                      <a onclick = "addCollaborator()" class="btn icon-btn btn-primary">
+                                      <a onclick = "addCollaborator()" class="btn icon-btn btn-default">
                                         <span class="glyphicon btn-glyphicon glyphicon-plus img-circle">
                                         </span>
                                           Add
@@ -524,8 +584,8 @@
                   </div>
 
                   <div class="modal-footer">
-                    <button onclick="saveBtnClicked()" id="submitButton" name="submitButton" class="btn btn-primary" data-dismiss="modal">Save</button>
-                    <button id="cancelButton" name="cancelButton" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button onclick="saveBtnClicked()" id="submitButton" name="submitButton" class="btn btn-default" data-dismiss="modal">Save</button>
+                    <button id="cancelButton" name="cancelButton" class="btn btn-default" data-dismiss="modal">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -556,9 +616,9 @@
                               <div class="icon">
                                    <i class="glyphicon glyphicon-dashboard"></i>
                               </div>
-                              <div class="text">
+                              <div class="text" id = "new-up-task">
                                   <!--var>614</var-->
-                                  <label class="text-muted">Upcoming Tasks</label>
+                                  <label class="text-muted" >1 Upcoming Tasks</label>
                               </div>
                               <div class="options">
                                   <a a href="#tab1info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-pencil"></i> View Tasks</a>
@@ -570,11 +630,13 @@
                               <div class="icon">
                                    <i class="glyphicon glyphicon-exclamation-sign"></i>
                               </div>
-                              <div class="text">
-                                  <!--var>73</var-->
-                                  <label class="text-muted">Past Tasks</label>
+                              <div class="text" id = "past-due-history">
+                                  <label class="text-muted">1 Task Past Due</label>
                               </div>
                               <div class="options">
+                                  <!--div class="alert alert-danger" role="alert"-->
+                                    <!--strong>1 Past Due Task</strong-->
+                                  <!--/div-->
                                   <a href="#tab2info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-search"></i> Rate Tasks</a>
                               </div>
                           </div>
@@ -585,8 +647,7 @@
                                    <i class="glyphicon glyphicon-piggy-bank"></i>
                               </div>
                               <div class="text">
-                                  <!--var>75%</var-->
-                                  <label class="text-muted">Rewards</label>
+                                  <label class="text-muted">3 Rewards History</label>
                               </div>
                               <div class="options">
                                   <a href="#tab3info" data-toggle="tab" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-heart"></i> View History</a>
@@ -669,7 +730,7 @@
                               <!-- Panel content -->
                               <a href="#" class="list-group-item">
 
-                                <div class="pull-left">
+                                <div class="pull-left" id = "analytics-notice">
                                   <h2 class="list-group-item-heading" id = "task2Name_ID"></h2>
                                   <p class="list-group-item-text" id = "task2Infor_ID"></p> 
                                   <p class="list-group-item-text" id = "task2Due_ID"></p>
@@ -766,14 +827,14 @@
                     <form class="form-horizontal">
                     <fieldset>
 
-                      <div class="form-group">
+                      <div class="form-group row">
                             <label class="col-md-6 control-label" for="textinput">Task Name</label>
                             <div class="col-md-6">
                               <input id="textinputfield2" name="textinput" type="text" placeholder="" class="form-control input-md" required="" value="">
                             </div>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group row">
                           <label class="col-md-6 control-label" for="venueName">Descriptions</label>
                           <div class="col-md-6">
                             <input id="task-description2" name="venueName" type="text" placeholder="" class="form-control input-md">
@@ -781,15 +842,19 @@
                           </div>
                       </div>
 
-                      <div class="form-group">
-                            <!--div class="input-group"-->
+                      <div class="form-group row">
                               <label class="col-md-6 control-label" for="venueName">Date</label>
                               <div class="col-md-6">
-                                <input id="eventDate2" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
+                                <input id="eventDate2" name="eventDate" class="form-control" placeholder="MM/DD/YYYY" type="text" required="">
                               </div>
-                              <!--span class="input-group-addon">Calendar</span-->
-                            <!--/div-->
+                      </div>
 
+                      <div class="form-group row">
+                          <label class="col-md-6 control-label" for="venueName">Rewards</label>
+                          <div class="col-md-6">
+                            <input id="edit-reward-description" name="venueName" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
                       </div>
 
 
@@ -802,13 +867,43 @@
                 
 
                   <div class="modal-footer">
-                    <button onclick="editBtnClicked()" id="submitButton" name="submitButton" class="btn btn-primary" data-dismiss="modal">Save</button>
-                    <button id="cancelButton" name="cancelButton" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button onclick="editBtnClicked()" id="submitButton" name="submitButton" class="btn btn-default" data-dismiss="modal">Save</button>
+                    <button id="cancelButton" name="cancelButton" class="btn btn-default" data-dismiss="modal">Cancel</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+
+
+
+
+            <div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="changeModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <!-- Put Image the user clicks on here -->
+                    <h1>Edit Task
+                    </h1>  
+                  </div>
+
+
+                  <div class="modal-body">
+
+
+                  </div>
+
+                
+
+                  <div class="modal-footer">
+                    <button onclick="editBtnClicked()" id="submitButton" name="submitButton" class="btn btn-default" data-dismiss="modal">Save</button>
+                    <button id="cancelButton" name="cancelButton" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
 
@@ -863,8 +958,8 @@
                                                     <input id="taginput" name="textinput" type="text" placeholder="Add Customized Tags Here." class="form-control input-md" required="">
                                                   </div>
 
-                                                  <a onclick="myFunction()" class="btn icon-btn btn-success form-group">
-                                                    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success">
+                                                  <a onclick="myFunction()" class="btn icon-btn btn-default form-group">
+                                                    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-default">
                                                     </span>
                                                       Add
                                                   </a>
@@ -1021,7 +1116,7 @@
 
             <!-- Modal Footer -->
             <div class="modal-footer">
-              <button onclick = "addTransition()" type="button" class="btn btn-default" data-dismiss="modal">
+              <button onclick = "showAnalytics()" type="button" class="btn btn-default" data-dismiss="modal">
                 Confirm
               </button>
               <button type="button" class="btn btn-default" data-dismiss="modal">
@@ -1202,7 +1297,7 @@
 
             <!-- Modal Footer -->
             <div class="modal-footer">
-              <button onclick = "addTransition()" type="button" class="btn btn-default" data-dismiss="modal">
+              <button onclick = "showAnalytics()" type="button" class="btn btn-default" data-dismiss="modal">
                 Confirm
               </button>
               <button type="button" class="btn btn-default" data-dismiss="modal">
